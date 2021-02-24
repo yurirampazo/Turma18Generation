@@ -10,9 +10,6 @@ public class declaracaoVariaveis {
 		
 		int numero = 3;
 		double numeroQuebrado = 5.4;
-		boolean teste = true;
-			
-		
 		System.out.println("Número inteiro: " + numero + "\nNúmero Quebrado: " + numeroQuebrado);
 		
 	}

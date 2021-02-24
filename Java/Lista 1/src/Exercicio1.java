@@ -22,6 +22,7 @@ public class Exercicio1 {
 		
 		System.out.println("Sua idade em dias é aproximadamente: " + idadeEmDias);
 		
+		sc.close();
 		
 	}
 	

@@ -11,7 +11,6 @@ public class Exercicio2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		int idadeEmDias = 0;
-		int idade = 0;
 		int anos = 0;
 		int meses = 0; 
 		int dias = 0;
@@ -24,7 +23,8 @@ public class Exercicio2 {
 		dias =(idadeEmDias % 365) % 30;
 		
 		System.out.println("Sua idade em aproximada é: "+ anos +" anos, "+ meses +" meses e "+ dias +"dias.");
-		
+	
+		sc.close();
 	}
 	
 

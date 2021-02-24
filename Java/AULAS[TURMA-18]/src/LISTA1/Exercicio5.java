@@ -1,7 +1,8 @@
+package LISTA1;
+
 import java.util.Scanner;
 
 public class Exercicio5 {
-	
 	/* YURI MINA RAMPAZO - GENERATION BRASIL - TURMA 18
 	 * PROJETO:
 	 * 5. Faça um sistema que leia as 3 notas de um aluno e 

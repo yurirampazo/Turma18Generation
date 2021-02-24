@@ -1,6 +1,9 @@
+package LISTA1;
+
 import java.util.Scanner;
 
 public class Exercicio2 {
+		
 	/* YURI MINA RAMPAZO - GENERATION BRASIL - TURMA 18
 	 * PROJETO: 
 	 *2. Faça um sistema que leia a idade de 
@@ -27,6 +30,4 @@ public class Exercicio2 {
 		sc.close();
 	}
 	
-
-		
 }

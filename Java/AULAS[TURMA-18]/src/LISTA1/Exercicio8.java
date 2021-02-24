@@ -1,3 +1,5 @@
+package LISTA1;
+
 import java.util.Scanner;
 
 public class Exercicio8 {
@@ -23,8 +25,7 @@ public class Exercicio8 {
 		
 		System.out.println("O custo para o consumidor final será: R$" + Math.round(custoConsumidor));
 		sc.close();	
-		
-		
+			
 	}
 
 }

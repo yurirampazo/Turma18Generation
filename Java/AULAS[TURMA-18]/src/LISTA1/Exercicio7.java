@@ -1,3 +1,5 @@
+package LISTA1;
+
 import java.util.Scanner;
 
 public class Exercicio7 {
@@ -11,15 +13,15 @@ public class Exercicio7 {
 				
 		System.out.println("Digite o número a: ");
 		int a = sc.nextInt();
-		System.out.println("Digite o número a: ");
+		System.out.println("Digite o número b: ");
 		int b = sc.nextInt();
-		System.out.println("Digite o número a: ");
+		System.out.println("Digite o número c: ");
 		int c = sc.nextInt();
-		System.out.println("Digite o número a: ");
+		System.out.println("Digite o número d: ");
 		int d = sc.nextInt();
-		System.out.println("Digite o número a: ");
+		System.out.println("Digite o número e: ");
 		int e = sc.nextInt();
-		System.out.println("Digite o número a: ");
+		System.out.println("Digite o número f: ");
 		int f = sc.nextInt();
 		
 		double x = ((c * e) -(b * f)) / ((a * e) -(b * d));

@@ -1,7 +1,9 @@
+package LISTA1;
+
 import java.util.Scanner;
 
-public class Exercicio4 {
-	
+public class Exercicios4 {
+
 	/* YURI MINA RAMPAZO - GENERATION BRASIL - TURMA 18
 	 * PROJETO:
 	 * 4. Escreva um sistema que leia três 
@@ -30,3 +32,4 @@ public class Exercicio4 {
 	}
 
 }
+

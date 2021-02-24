@@ -13,17 +13,15 @@ public class Exercicio5 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int nota1 = 0, nota2 = 0, nota3 = 0;	
-		double mediaPonderada;
-				
-		System.out.println("Digite a primeira nota: ");
-		nota1 = sc.nextInt();
-		System.out.println("Digite a segunda nota: ");
-		nota2 = sc.nextInt();
-		System.out.println("Digite a terceira nota: ");
-		nota3 = sc.nextInt();
+					
+		System.out.print("Digite a primeira nota: ");
+		double nota1 = sc.nextDouble();
+		System.out.print("Digite a segunda nota: ");
+		double nota2 = sc.nextDouble();
+		System.out.print("Digite a terceira nota: ");
+		double nota3 = sc.nextDouble();
 		
-		mediaPonderada = ((nota1 * 2) + (nota2 * 3) + (nota3 * 5)) / (2 + 3 + 5);
+		double mediaPonderada = ((nota1 * 2) + (nota2 * 3) + (nota3 * 5)) / (2 + 3 + 5);
 		System.out.println("A média ponderada das notas é: " + mediaPonderada);
 		
 		sc.close();

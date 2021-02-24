@@ -2,7 +2,7 @@ package LISTA1;
 
 import java.util.Scanner;
 
-public class Exercicios4 {
+public class Exercicio4 {
 
 	/* YURI MINA RAMPAZO - GENERATION BRASIL - TURMA 18
 	 * PROJETO:
@@ -14,11 +14,11 @@ public class Exercicios4 {
 		Scanner sc = new Scanner(System.in);
 		int a = 0, b = 0, c = 0;	
 				
-		System.out.println("Digite um número inteiro positivo: ");
+		System.out.print("Digite um número inteiro positivo: ");
 		a = sc.nextInt();
-		System.out.println("Digite mais um número inteiro positivo: ");
+		System.out.print("Digite mais um número inteiro positivo: ");
 		b = sc.nextInt();
-		System.out.println("Digite outro número inteiro positivo: ");
+		System.out.print("Digite outro número inteiro positivo: ");
 		c = sc.nextInt();
 		
 		double r = Math.pow((a + b), 2);
@@ -28,8 +28,5 @@ public class Exercicios4 {
 		System.out.println("R = "+ r +"\nS = "+s +"\nD = "+ d);
 		
 		sc.close();	
-
 	}
-
 }
-

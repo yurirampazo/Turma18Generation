@@ -11,25 +11,23 @@ public class Exercicio7 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 				
-		System.out.println("Digite o número a: ");
+		System.out.print("Digite o número a: ");
 		int a = sc.nextInt();
-		System.out.println("Digite o número b: ");
+		System.out.print("Digite o número b: ");
 		int b = sc.nextInt();
-		System.out.println("Digite o número c: ");
+		System.out.print("Digite o número c: ");
 		int c = sc.nextInt();
-		System.out.println("Digite o número d: ");
+		System.out.print("Digite o número d: ");
 		int d = sc.nextInt();
-		System.out.println("Digite o número e: ");
+		System.out.print("Digite o número e: ");
 		int e = sc.nextInt();
-		System.out.println("Digite o número f: ");
+		System.out.print("Digite o número f: ");
 		int f = sc.nextInt();
 		
 		double x = ((c * e) -(b * f)) / ((a * e) -(b * d));
 		double y = ((a * f) -(c * d)) / ((a * e) -(b * d));
 
-		System.out.println("X = " + x + "\nY = "+y);
-		
+		System.out.println("X = " + x + "\nY = "+ y);
 		sc.close();
 	}
-
 }

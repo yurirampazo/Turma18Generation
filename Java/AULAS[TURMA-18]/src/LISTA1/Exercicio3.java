@@ -15,7 +15,7 @@ public class Exercicio3 {
 		Scanner	sc = new Scanner(System.in);
 			
 		
-		System.out.println("Digite o tempo de duração do evento em segundos: ");
+		System.out.print("Digite o tempo de duração do evento em segundos: ");
 		int duracao = sc.nextInt(); 
 		
 		int horas = duracao / 3600;

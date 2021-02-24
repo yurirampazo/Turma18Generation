@@ -18,7 +18,7 @@ public class Exercicio2 {
 		int meses = 0; 
 		int dias = 0;
 		
-		System.out.println("Digite sua idade em dias: ");
+		System.out.print("Digite sua idade em dias: ");
 		idadeEmDias = sc.nextInt();
 		
 		anos = idadeEmDias / 365;

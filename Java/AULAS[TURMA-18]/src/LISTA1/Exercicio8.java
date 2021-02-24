@@ -18,7 +18,7 @@ public class Exercicio8 {
 				
 		double impostos = 0.45, percentual = 0.28;
 		
-		System.out.println("Escreva o custo de fábrica do carro: ");
+		System.out.print("Escreva o custo de fábrica do carro: ");
 		double custo = sc.nextDouble();
 		
 		double custoConsumidor = (custo / (impostos + percentual));

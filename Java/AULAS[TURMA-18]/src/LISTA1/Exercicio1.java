@@ -16,7 +16,7 @@ package LISTA1;
 			int idade = 0; 	// poderia declarar após a entrada de dados
 			int idadeEmDias = 0;
 			
-			System.out.println("Digite sua idade em anos: ");
+			System.out.print("Digite sua idade em anos: ");
 			idade = sc.nextInt();
 					
 			idadeEmDias	= (idade * 365);

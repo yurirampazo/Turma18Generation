@@ -3,7 +3,6 @@ package LISTA2;
 import java.util.Scanner;
 
 public class Exercicio2 {
-	static class Exercicio1 {
 		/* YURI MINA RAMPAZO - GENERATION BRASIL - TURMA 18
 		 *PROJETO:
 		 *2- Faça um programa que entre com 

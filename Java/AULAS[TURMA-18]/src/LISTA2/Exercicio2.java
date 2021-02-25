@@ -52,4 +52,3 @@ public class Exercicio2 {
 			sc.close();
 		}
 }
-}

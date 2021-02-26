@@ -24,7 +24,7 @@ Scanner	leia = new Scanner(System.in);
 			}
 		}
 		System.out.println("Dos valores digitados " + numeroPar + " são pares.");	
-		System.out.println("Dos valores digitados " + numeroPar + " são ímpares.");
+		System.out.println("Dos valores digitados " + numeroImpar + " são ímpares.");
 	leia.close();
 	}
 }

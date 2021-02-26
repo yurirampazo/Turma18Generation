@@ -16,7 +16,7 @@ public class Ex01 {
 		for (int i =1000; i <=1999; i++) {
 			if (i % 11 ==5) {
 				resto5++;
-				System.out.println(resto5);
+				System.out.println(resto5 +". "+i);
 			}
 		}
 	leia.close();

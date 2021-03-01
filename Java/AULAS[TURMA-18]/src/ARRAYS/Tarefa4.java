@@ -16,7 +16,7 @@ public class Tarefa4 {
         int l=0, c=0;
 
         for (l = 0; l<LINHA; l++) {
-            for (c = 0; c<COLUNA; c++) {
+            for (c = 0; c < COLUNA; c++) {
                 N1[l][c]=dados.nextInt(9)+1;
                 N2[l][c]=dados.nextInt(9)+1;
                 M1[l][c]= N1[l][c]+N2[l][c];

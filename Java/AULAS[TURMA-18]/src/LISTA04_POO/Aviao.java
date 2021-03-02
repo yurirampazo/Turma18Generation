@@ -1,9 +1,11 @@
 package LISTA04_POO;
 
-public class Aviao {
-	/*2) Crie uma classe avião e apresente os atributos e métodos referentes
-	esta classe, em seguida crie um objeto avião, defina as instancias deste
-	objeto e apresente as informações deste objeto no console.*/
+public class Aviao { // CLASSE
+	/*YURI MINA RAMPAZO - TURMA 18 - GENERATION BRASIL.
+	*PROPOSTA:
+	*2) Crie uma classe avião e apresente os atributos e métodos referentes
+	* esta classe, em seguida crie um objeto avião, defina as instancias deste
+	* objeto e apresente as informações deste objeto no console.*/
 	double velocidadeMaxima;
 	String cor;
 	String modelo;

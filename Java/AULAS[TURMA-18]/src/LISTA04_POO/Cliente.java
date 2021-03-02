@@ -1,9 +1,11 @@
 package LISTA04_POO;
 
-public class Cliente {
-	/*1) Crie uma classe cliente e apresente os atributos e métodos referentes
-	esta classe, em seguida crie um objeto cliente, defina as instancias deste
-	objeto e apresente as informações deste objeto no console.*/
+public class Cliente {  //CLASSE
+	/*YURI MINA RAMPAZO - TURMA 18 - GENERATION BRASIL.
+	*PROPOSTA:
+	*1) Crie uma classe cliente e apresente os atributos e métodos referentes
+	* esta classe, em seguida crie um objeto cliente, defina as instancias deste
+	* objeto e apresente as informações deste objeto no console.*/
 	String nome;
 	int idade;
 	String cpf;

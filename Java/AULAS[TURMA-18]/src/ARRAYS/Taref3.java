@@ -37,11 +37,10 @@ public class Taref3 {
 			if (l == c) {
 				somaDiagonal = (matriz[l][c] + matriz[l][c] + matriz[l][c]);
 			}
+			//System.out.print("[" + matriz[l][c] + "] \t");
 			System.out.printf("[ %d ]\t",matriz[l][c]);	
-			if (c == 2) {
-				System.out.println(" ");
 			}
-			}
+			System.out.println();
 		}
 		System.out.printf("\nA soma total da matriz é: %d",somaTotal);
 		

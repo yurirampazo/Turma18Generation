@@ -29,10 +29,6 @@ public class Conta {
 		System.out.println("--------------------------------------");
 	}
 	
-	public String getNomeCompleto() {
-		String nomeCompleto = primeiroNome +" "+ nomesDoMeio +" " + ultimoNome;
-		return nomeCompleto;
-	}
 	public String getTipo() {
 		return tipo;
 	}

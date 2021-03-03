@@ -13,29 +13,22 @@ public class Teste {
 
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
-		//Conta conta1 = new Conta (1,"111.111.111-15");
-		//Conta conta2 = new Conta(2);
-		Conta conta3 = new Conta(3,"444.555.666-14",true);
-		double valor;
-		char opcao = 0;
+		Conta conta1 = new Conta();
+		conta1.setNumero(50475182);
+		conta1.setTipo("Corrente");
 		
 		
-		System.out.println("Digite o valor: ");
-		valor = leia.nextDouble();
-		System.out.println("Débito ou crédito? [D/C]: ");
-		opcao = leia.next().toUpperCase().charAt(0);
-		if (opcao == 'D') {
-			conta3.debito(valor);
+		System.out.print("Digite seu CPF para criar sua conta corrente: ");
+		conta1.cpf = leia.next();
+		System.out.print("Digite somente o primeiro nome para validar o CPF: ");
+		conta1.primeiroNome = leia.next();
+		
+				
+		for(int i = 0; i < 30; i++) {
+			System.out.println();
 		}
-		else if (opcao == 'C') {
-			conta3.credito(valor);
-		} else {
-			System.out.println("Opção inválida!!!");
-		}
-			
-		//onta3.credito(valor);
-		//nta3.debito(45.25);
-		System.out.println("Saldo atual: " + conta3.getSaldo());
+		conta1.Dados();
+		System.out.println("Seja bem vindo ao banco Gen18.\nEstamos felizes em te ter conosco!");
 	leia.close();
 	}
 }

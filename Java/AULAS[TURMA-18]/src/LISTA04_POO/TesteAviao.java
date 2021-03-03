@@ -21,11 +21,13 @@ public class TesteAviao { //PROGRAMA
 		System.out.print("Digite o número de assentos: ");
 		aviao.assentos = sc.nextInt();
 		System.out.print("Digite a cor do avião: ");
-		aviao.cor = sc.nextLine();
-		System.out.print("Digite velocidade máxima do avião: ");
+		aviao.cor = sc.next();
+		System.out.print("Digite velocidade máxima do avião: [km/h]");
 		aviao.velocidadeMaxima = sc.nextDouble();
-		
-		
+		for(int i = 0; i < 30; i++) {
+			System.out.println();
+		}
+		aviao.Dados();
 	sc.close();
 	}
 }

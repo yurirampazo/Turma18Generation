@@ -12,7 +12,7 @@ public class Cliente {  //CLASSE
 	
 	public void Dados() {
 		System.out.println("--------------------------------------");
-		System.out.println("            DADOS DO CLIENTE:         ");
+		System.out.println("         DADOS DO CLIENTE:            ");
 		System.out.println("--------------------------------------");
 		System.out.println("Nome do cliente: "+ nome);
 		System.out.println("CPF do cliente: " + cpf );

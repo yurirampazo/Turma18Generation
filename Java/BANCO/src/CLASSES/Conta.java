@@ -4,7 +4,7 @@ public class Conta {
 	//atributos da classe Conta, dentro do pacote CLASSES: 
 	private int numero;											
 	private String cpf;											
-	protected double saldo;												
+	private double saldo;												
 	private boolean ativa;								
 	 	 		
 	

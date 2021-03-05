@@ -1,7 +1,7 @@
 package CLASSES;
 
 
-public class ContaEspecial extends Conta{
+public class ContaEspecial extends Conta{ 	//Yuri Mina Rampazo
 	private double limite;
 	
 	//CONSTRUTOR - SOBRECARGA
@@ -14,12 +14,12 @@ public class ContaEspecial extends Conta{
 		return limite;
 	}
 	public void setLimite(double limite) {
-		this.limite = 1000;
+		this.limite = 1000.00;
 	}
 		
 	
 	
-	@Override	
+	/*@Override	
 	public void credito(double valor) {
 		for (int i = 0; i <15; i++) {
 			System.out.println();
@@ -29,7 +29,7 @@ public class ContaEspecial extends Conta{
 		System.out.printf("Saldo Disponível: R$ %.2f \n", getSaldo());
 		System.out.println();
 		
-	}
+	}*/
 		
 	@Override
 	
@@ -44,7 +44,7 @@ public class ContaEspecial extends Conta{
 		}
 		else if (valor > saldo && limite >= 0) {
 		System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta especial.");
-		this.saldo = limite;
+		this.saldo = this.saldo + limite;
 		this.saldo = this.saldo - valor;
 		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 		System.out.printf("Saldo R$ %.2f \n", this.getSaldo());

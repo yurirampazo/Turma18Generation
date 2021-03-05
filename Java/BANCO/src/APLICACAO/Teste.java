@@ -1,8 +1,9 @@
 package APLICACAO;
 
+
+
 import java.util.Scanner;
 
-import CLASSES.Conta;
 import CLASSES.ContaEspecial;
 
 
@@ -13,11 +14,11 @@ public class Teste {
 		String cpf= "";
 		int numero = 0;
 		double valor;
-		final double limite = 1000;
+		final double limite = 1000.00;
 		char opcao,opcao1;
 		boolean ativa = true;
 		//Conta conta = new Conta(numero,cpf);
-		Conta contaEspecial = new ContaEspecial(numero,cpf,ativa,limite);
+		ContaEspecial contaEspecial = new ContaEspecial(numero,cpf,ativa,limite);
 		//Conta contaPoupanca = new ContaPoupanca();
 		//Conta contaEmpresa = new ContaEmpresa();
 		//Conta contaEstudantil = new ContaEstudantil();
@@ -50,6 +51,7 @@ public class Teste {
 				System.out.print("Digite o numero da sua conta: ");
 				numero = leia.nextInt();
 				
+				
 				System.out.print("Insira o número do CPF:");  										
 		    	cpf = leia.next();
 				
@@ -68,8 +70,8 @@ public class Teste {
 					
 				//TELA 2
 				System.out.println("BANCO GEN-18 \nAQUI SEU DINHEIRO TEM VALOR!");
-				System.out.println("CONTA POUPANÇA");
-				System.out.print("Saldo Atual: R$ " + contaEspecial.getSaldo());
+				System.out.println("CONTA ESPECIAL");
+				System.out.print(contaEspecial.getSaldo());
 				System.out.println();
 				//CALCULO DO SALDO
 				for (int i = 0; i <10; i++) {	

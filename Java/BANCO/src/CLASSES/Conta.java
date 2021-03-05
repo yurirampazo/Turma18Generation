@@ -78,8 +78,8 @@ public class Conta {
 		else if (valor > saldo) {
 			for (int i = 0; i <15; i++) {
 				System.out.println();
-			}System.out.println("Saldo insuficiente. Procure um atendente ou faça um depósito na conta.");
+			}System.out.println("Você não pode realizar essa operação. Saldo insuficiente!");
+			System.out.printf("Saldo R$ %.2f \n", this.getSaldo());
 		}
 	}
-}
-		
+}	

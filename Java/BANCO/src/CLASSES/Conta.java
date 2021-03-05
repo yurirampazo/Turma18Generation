@@ -2,29 +2,28 @@ package CLASSES;
 
 public class Conta {
 	//atributos da classe Conta, dentro do pacote CLASSES: 
-	private int numero;											//metodos debito e credito
-	private String cpf;											//responsabilidade de casse
-	private double saldo;										//nao pode usar o set no saldo		
-	private boolean ativa;								// atributos que nao forem declarados como public
-														//são public
+	private int numero;											
+	private String cpf;											
+	protected double saldo;												
+	private boolean ativa;								
+	 	 		
 	
-	//se for tirar money da conta use debito, se for colocar usar o metodo credito
-	
-	public Conta(int numero, String cpf) { 		//CONSTRUTOR TEM O MESMO NOME DA CLASSE SÓ QUE COM PARENTESIS!!!!!
+	//CONSTRUTORES
+	public Conta(int numero, String cpf) { 		
 		this.numero = numero;
 		this.cpf = cpf;
 	}
 	
-	public Conta(int numero) {  	// SOBRECARAGA, CONSEGUE FAZER OUTRO METODO COM O MESMO NOME POREM TIPO DIFERENTE.
+	public Conta(int numero) {  	
 		this.numero = numero; 
 	}
 	
-	public Conta(int numero, String cpf, boolean ativa) {  //SOBRECARGA DE CONTRUTOR++ É O QUE VAI TRABALHAR AS ENTRADAS!
+	public Conta(int numero, String cpf, boolean ativa) {  
 		this.numero = numero;
 		this.cpf = cpf;
 		this.ativa = ativa;
 	}
-
+	//ENCAPSULAMENTO
 	public int getNumero() {
 		return numero;
 	}
@@ -56,12 +55,31 @@ public class Conta {
 	
 	//METODOS
 	public void credito(double valor) {
+		for (int i = 0; i <15; i++) {
+			System.out.println();
+		}
+		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
 		this.saldo = this.saldo + valor;
+		System.out.printf("Saldo Disponível: R$ %.2f \n", getSaldo());
+		System.out.println();
+		
 	}
 	
-	public void debito (double valor) {
+	public void debito (double valor) { 
+		for (int i = 0; i <15; i++) {
+			System.out.println();
+		}
 		if (this.saldo >= valor) {
 		this.saldo = this.saldo - valor;
+		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
+		System.out.println();
+		System.out.printf("Saldo Disponível: R$ %.2f \n", this.getSaldo());
+		}
+		else if (valor > saldo) {
+			for (int i = 0; i <15; i++) {
+				System.out.println();
+			}System.out.println("Saldo insuficiente. Procure um atendente ou faça um depósito na conta.");
 		}
 	}
 }
+		

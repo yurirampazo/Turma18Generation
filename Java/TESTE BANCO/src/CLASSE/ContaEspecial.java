@@ -18,27 +18,22 @@ public class ContaEspecial extends Conta{
 		
 	
 	
-	
-	public void credito(double creditar) {
-		if(creditar > 0) {
-			this.saldo = this.getSaldo() + creditar;
-			System.out.printf("R$ %.2f creditados na sua conta!\n", creditar);
-			//System.out.printf("Saldo atual R$ %.2f\n", this.getSaldo());
+	@Override	
+	public void credito(double valor) {
+		for (int i = 0; i <15; i++) {
 			System.out.println();
-			
-		}else if(creditar == 0) {
-			System.out.printf("O valor R$ %.2f depositado deve ser maior que R$ 0,00 \n", creditar);
-			System.out.println("Transacao bloqueada");
-			
-		}else if(creditar < 0) {
-			System.out.printf("O valor R$ %.2f depositado deve positivo \n", creditar);
-			System.out.println("Transacao bloqueada");
 		}
+		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
+		this.saldo = this.saldo + valor;
+		System.out.printf("Saldo Disponível: R$ %.2f \n", getSaldo());
+		System.out.println();
 		
-	
 	}
+		
 	@Override
+	
 	 // SITUAÇÃO NORMAL EM QUE O SALDO É MAIOR QUE O VALOR DEBITADO!
+	//SITUAÇÃO ESPECIAL, CASO SEJA UTILIZADO O LIMIT
 	public void debito (double valor) { 
 		if (this.saldo >= valor) {
 		this.saldo = this.saldo - valor;
@@ -46,34 +41,16 @@ public class ContaEspecial extends Conta{
 		System.out.println();
 		System.out.printf("Saldo R$ %.2f \n", this.getSaldo());
 		}
-		else if (valor > saldo) {
-			System.out.println("Saldo insuficiente. Procure um atendente ou faça um depósito na conta.");
-			
-			//System.out.println("Deseja utilizar o limite? ");
-			
+		else if (valor > saldo && limite >= 0) {
+		System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta especial.");
+		this.saldo = limite;
+		this.saldo = this.saldo - valor;
+		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
+		System.out.printf("Saldo R$ %.2f \n", this.getSaldo());
 		}
-	}
-	
-	//SITUAÇÃO ESPECIAL, CASO SEJA UTILIZADO O LIMITE
-	
-	public  void debito (double valor, double limite) {
-		System.out.printf("Saldo atual R$ %.2f \n", this.getSaldo());
-		System.out.println();
-		
-		if (valor < limite && saldo <= 0) {
-			System.out.printf("Limite disponível: %.2f" , limite);
-			this.saldo = this.limite;
-			this.saldo = this.saldo - valor;
-			System.out.printf("Saque realizado. Valor utilizado do limite: R$ %.2f", valor);
-		}
-		else if (valor > limite) {
-			for (int i = 0; i <15; i++) {
-				System.out.println();
-			}
-			this.limite = 0.00;
-			this.saldo = 0.00;
-			System.out.println("Saldo insuficiente. Procure um atendente ou faça um depósito na conta.");
-		}
-	
+		else if (valor > saldo && valor > limite) {
+			System.out.println("Você não pode realizar essa operação. Saldo insuficiente!");
+			System.out.printf("Saldo R$ %.2f \n", this.getSaldo());	
+		}		
 	}
 }

@@ -85,7 +85,7 @@ public class Teste {
 					}	
 				}
 				System.out.println(contaEspecial.getSaldo());
-				System.out.println("Valor movimentado R$: " /* ValorMovimentadoMetodo*/);
+				//System.out.println("Valor movimentado R$: " ValorMovimentadoMetodo);
 				System.out.println("Deseja continuar? [S/N]: ");
 				opcao1 = leia.next().toUpperCase().charAt(0);
 			} while (opcao1 == 'N');	

@@ -19,12 +19,4 @@ public class ContaCorrente extends Conta {
 	public void setContadorTalao(int contadorTalao) {
 		this.contadorTalao = contadorTalao;
 	}
-	
-	
-	@Override
-	public void debito (double valor) {
-		if (this.saldo >= valor) {
-		this.saldo = this.saldo - valor;
-		}
-	}
 }

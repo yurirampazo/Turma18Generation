@@ -28,11 +28,4 @@ public class ContaPoupanca extends Conta {
             super.credito(valor);
         }
     }
-
-	@Override
-	public void debito (double valor) {
-		if (this.saldo >= valor) {
-		this.saldo = this.saldo - valor;
-		}
-	}
 }	

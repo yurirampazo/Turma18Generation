@@ -26,6 +26,7 @@ public class Terceiro extends Funcionario {
 	}
 	@Override
 	public double salario (double imposto) {
-		return (horasTrabalhadas * valorPorHora) - ((horasTrabalhadas * valorPorHora) * imposto) + adicional;
+		return (horasTrabalhadas * valorPorHora) - ((horasTrabalhadas * valorPorHora) * imposto) + adicional; //ADICIONAL É INSENTO DE IMPOSTO?
+		
 	}
 }

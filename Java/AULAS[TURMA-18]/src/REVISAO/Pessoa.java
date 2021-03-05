@@ -72,10 +72,10 @@ public class Pessoa {
 	public void setGenero(char genero) {
 		this.genero = genero;
 	}
-	//METODO
+	/*METODO
 	public int idade() {
 		return 2021 - anoNascimento;
-	}
+	}*/
 	
 	//METODO SOBRECARGA
 	public int idade(int anoAtual) {

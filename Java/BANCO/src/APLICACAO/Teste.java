@@ -1,9 +1,8 @@
 package APLICACAO;
 
-
-
 import java.util.Scanner;
 
+import CLASSES.ContaCorrente;
 import CLASSES.ContaEspecial;
 
 
@@ -18,6 +17,8 @@ public class Teste {
 		char opcao,opcao1;
 		boolean ativa = true;
 		
+		ContaEspecial contaPoupanca = new ContaEspecial(numero,cpf,ativa,limite,diaAniversarioPoupanca);
+		//ContaCorrente contaCorrente = new ContaCorrente(numero,cpf,ativa,contadorTalao);
 		ContaEspecial contaEspecial = new ContaEspecial(numero,cpf,ativa,limite);
 		
 		
@@ -35,6 +36,61 @@ public class Teste {
 		// SELEÇÃO DO TIPO DE CONTA
 		int tipoConta = leia.nextInt();
 		switch (tipoConta) {
+			case 1: {
+				//CASO SEJA CONTA POUPANÇA	
+				for (int i = 0; i < 15; i++) {
+					System.out.println();
+				}
+				do {
+					System.out.println("BANCO GEN-18 \nAQUI SEU DINHEIRO TEM VALOR!");
+					System.out.println("CONTA POUPANÇA");
+					System.out.print("Digite o numero da sua conta: ");
+					numero = leia.nextInt();
+					
+					System.out.print("Insira o número do CPF:");  										
+			    	cpf = leia.next();
+					
+					
+					System.out.println("Digite 1 - Conta Ativa  ou  2 - Conta Inativa:");  												
+					opcao1 = leia.next().charAt(0);
+					if (opcao1 == '1') {
+						
+						ativa = true;
+						System.out.println("Conta ativada.");
+						} 
+						else {
+						ativa = false;
+						System.out.println("Conta DESATIVADA!!!");
+						break;
+						}
+						
+					//TELA 2
+					System.out.println("BANCO GEN-18 \nAQUI SEU DINHEIRO TEM VALOR!");
+					System.out.println("CONTA ESPECIAL");
+					System.out.print("Saldo Atual: R$ " + contaPoupanca.getSaldo());
+					System.out.println();
+					//CALCULO DO SALDO
+					
+					for (int i = 0; i <10; i++) {	
+						System.out.print("Digite o valor da operação: R$ ");
+						valor = leia.nextDouble();
+						System.out.print("Débito ou crédito? [D/C]: ");
+						opcao = leia.next().toUpperCase().charAt(0);
+						if (opcao == 'D') {
+							contaPoupanca.debito(valor);
+						}
+						else if (opcao == 'C') {
+							contaPoupanca.credito(valor);
+						}	else {
+							System.out.println("Opção inválida!");
+						}
+						contaPoupanca.usarLimite(valor);
+						
+						System.out.println((i + 1) + "º Movimento. Deseja continuar? [S/N]: ");
+						opcao1 = leia.next().toUpperCase().charAt(0);
+					} 	
+				} while (opcao1 == 'N');	
+			} break;
 		
 		case 3: {
 			
@@ -61,7 +117,7 @@ public class Teste {
 					} 
 					else {
 					ativa = false;
-					System.out.println("Conta desativada.");
+					System.out.println("Conta DESATIVADA!!!");
 					break;
 					}
 					
@@ -87,11 +143,9 @@ public class Teste {
 					}
 					contaEspecial.usarLimite(valor);
 					
-					System.out.println(i + 1+ "º Movimento. Deseja continuar? [S/N]: ");
+					System.out.println((i + 1)+ "º Movimento. Deseja continuar? [S/N]: ");
 					opcao1 = leia.next().toUpperCase().charAt(0);
-				
 				} 	
-				 	
 			} while (opcao1 == 'N');	
 		
 		} break;

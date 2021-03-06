@@ -2,14 +2,15 @@ package CLASSES;
 
 public class ContaCorrente extends Conta {
 	private int contadorTalao;
-	public ContaCorrente(int numero, String cpf) {
+	public ContaCorrente(int numero, String cpf, int contadorTalao) {
 		super(numero, cpf);
-		// TODO Auto-generated constructor stub
+		this.contadorTalao = contadorTalao;
+		
 	}
 
 	public ContaCorrente(int numero) {
 		super(numero);
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public int getContadorTalao() {
@@ -18,5 +19,10 @@ public class ContaCorrente extends Conta {
 
 	public void setContadorTalao(int contadorTalao) {
 		this.contadorTalao = contadorTalao;
+	}
+	
+	//MÉTODO PARA PEDIR TALÃO
+	public void pediTalao(double valorTalao) {
+	
 	}
 }

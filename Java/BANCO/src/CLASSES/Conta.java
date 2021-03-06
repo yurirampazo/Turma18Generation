@@ -4,7 +4,7 @@ public class Conta {
 	//atributos da classe Conta, dentro do pacote CLASSES: 
 	private int numero;											
 	private String cpf;											
-	private double saldo;												
+	protected double saldo;												
 	private boolean ativa;								
 	 	 		
 	
@@ -60,7 +60,7 @@ public class Conta {
 		}
 		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
 		this.saldo = this.saldo + valor;
-		System.out.printf("Saldo Disponível: R$ %.2f \n", getSaldo());
+		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
 		System.out.println();
 		
 	}
@@ -73,13 +73,13 @@ public class Conta {
 		this.saldo = this.saldo - valor;
 		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 		System.out.println();
-		System.out.printf("Saldo Disponível: R$ %.2f \n", this.getSaldo());
+		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
 		}
 		else if (valor > saldo) {
 			for (int i = 0; i <15; i++) {
 				System.out.println();
-			}System.out.println("Você não pode realizar essa operação. Saldo insuficiente!");
-			System.out.printf("Saldo R$ %.2f \n", this.getSaldo());
+			}System.out.println("Saldo insuficiente. Operação inválida");
 		}
 	}
-}	
+}
+	

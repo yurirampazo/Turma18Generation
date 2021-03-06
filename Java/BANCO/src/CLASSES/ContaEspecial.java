@@ -1,9 +1,10 @@
 package CLASSES;
 public class ContaEspecial extends Conta{ 	//Yuri Mina Rampazo
+	//ATRIBUTO DA SUB 
 	private double limite;
 	//CONSTRUTOR - SOBRECARGA
 	public ContaEspecial(int numero, String cpf,boolean ativa, double limite) {
-		super(numero, cpf);
+		super(numero, cpf, ativa);
 		this.limite = limite;
 	}
 	//ENCAPSULAMENTO

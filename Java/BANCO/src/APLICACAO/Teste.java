@@ -2,7 +2,6 @@ package APLICACAO;
 
 import java.util.Scanner;
 
-import CLASSES.ContaCorrente;
 import CLASSES.ContaEspecial;
 
 
@@ -17,7 +16,7 @@ public class Teste {
 		char opcao,opcao1;
 		boolean ativa = true;
 		
-		ContaEspecial contaPoupanca = new ContaEspecial(numero,cpf,ativa,limite,diaAniversarioPoupanca);
+		//ContaEspecial contaPoupanca = new ContaEspecial(numero,cpf,ativa,limite,diaAniversarioPoupanca);
 		//ContaCorrente contaCorrente = new ContaCorrente(numero,cpf,ativa,contadorTalao);
 		ContaEspecial contaEspecial = new ContaEspecial(numero,cpf,ativa,limite);
 		
@@ -36,7 +35,7 @@ public class Teste {
 		// SELEÇÃO DO TIPO DE CONTA
 		int tipoConta = leia.nextInt();
 		switch (tipoConta) {
-			case 1: {
+			/*case 1: {
 				//CASO SEJA CONTA POUPANÇA	
 				for (int i = 0; i < 15; i++) {
 					System.out.println();
@@ -90,7 +89,7 @@ public class Teste {
 						opcao1 = leia.next().toUpperCase().charAt(0);
 					} 	
 				} while (opcao1 == 'N');	
-			} break;
+			} break;*/
 		
 		case 3: {
 			

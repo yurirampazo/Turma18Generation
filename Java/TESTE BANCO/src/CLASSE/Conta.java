@@ -60,7 +60,7 @@ public class Conta {
 		}
 		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
 		this.saldo = this.saldo + valor;
-		System.out.printf("Saldo Disponível: R$ %.2f \n", getSaldo());
+		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
 		System.out.println();
 		
 	}
@@ -78,7 +78,7 @@ public class Conta {
 		else if (valor > saldo) {
 			for (int i = 0; i <15; i++) {
 				System.out.println();
-			}System.out.println("Saldo insuficiente. Procure um atendente ou faça um depósito na conta.");
+			}System.out.println("Saldo insuficiente. Operação inválida");
 		}
 	}
 }

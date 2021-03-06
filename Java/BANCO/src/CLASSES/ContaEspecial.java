@@ -18,7 +18,7 @@ public class ContaEspecial extends Conta{ 	//Yuri Mina Rampazo
 	//MÉTODO especial SITUAÇÃO ESPECIAL, CASO SEJA UTILIZADO O LIMIT
 	public void usarLimite (double valor) {
 				
-		if (valor > super.getSaldo() && valor <= (super.getSaldo() + limite)) {
+		if (valor > super.getSaldo() && valor <= super.getSaldo() + limite) {
 			System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta especial.");
 			double dif = 0.00;
 			dif = valor - super.getSaldo();
@@ -30,5 +30,34 @@ public class ContaEspecial extends Conta{ 	//Yuri Mina Rampazo
 			System.out.printf("Saldo R$ %.2f \n", super.getSaldo());
 			System.out.printf("Limite R$ %.2f \n", this.limite);
 		} 
+	
+	}
+	@Override
+	public void debito (double valor) { 
+		for (int i = 0; i <15; i++) {
+			System.out.println();
+		}
+		if (this.saldo >= valor) {
+		this.saldo = this.saldo - valor;
+		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
+		System.out.println();
+		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
+		System.out.println("Limite Disponível: "+ limite);
+		}
+		else if (valor > saldo) {
+			for (int i = 0; i <15; i++) {
+				System.out.println();
+			}System.out.println("Saldo insuficiente. Operação inválida");
+		}
+	}
+	public void credito(double valor) {
+		for (int i = 0; i <15; i++) {
+			System.out.println();
+		}
+		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
+		this.saldo = this.saldo + valor;
+		System.out.printf("Saldo Disponível: R$ %.2f \n",saldo);
+		System.out.println();
+		System.out.println("Limite Disponível: "+ limite);
 	}
 }

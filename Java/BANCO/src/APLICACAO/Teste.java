@@ -161,7 +161,7 @@ public class Teste {
 						
 			case 3: {
 				
-				//CASO SEJA CONTA ESPECIAL:	YURI
+				//CASO SEJA CONTA ESPECIAL	
 				for (int i = 0; i < 15; i++) {
 					System.out.println();
 				}
@@ -214,31 +214,23 @@ public class Teste {
 							opcaoContinuar = leia.next().toUpperCase().charAt(0);
 						}
 						
-						}
 						if(opcaoContinuar == 'N') {
 							System.out.println("|============================================|");
 							System.out.println("|   Obrigado por utilizar o BANCO GEN18 G-08 |");
 							System.out.println("|============================================|");
 							break;
 						}
+						}
+						System.out.println("|   Limite de transações diárias atingido.   |");
+						System.out.println("|============================================|");
+						System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEspecial.getSaldo());
+						System.out.printf( "|            [ Limite:  R$  %.2f ]         |\n",contaEspecial.getLimite());
+						System.out.println("|  Obrigado por utilizar o BANCO GEN18 G-08  |");
+						System.out.println("|============================================|");
+						break;	
 							
 					}
-										
-					System.out.println("|   Limite de transações diárias atingido.   |");
-					System.out.println("|============================================|");
-					System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEspecial.getSaldo());
-					System.out.printf( "|            [ Limite:  R$  %.2f ]         |\n",contaEspecial.getLimite());
-					System.out.println("|       Obrigado por utilizar o banco G-08   |");
-					System.out.println("|============================================|");
-					break;
-			
-			default: {
 
-				System.out.println("Opção inválida!");
-				break;
-			}
-										
-					
 			case 4 : {
 				
 				System.out.println("|============================================|");

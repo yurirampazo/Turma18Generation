@@ -4,6 +4,7 @@ package APLICACAO;
 
 import java.util.Scanner;
 
+import CLASSES.ContaCorrente;
 import CLASSES.ContaEspecial;
 import CLASSES.ContaPoupanca;
 
@@ -13,14 +14,15 @@ public class Teste {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
 		String cpf= "";
-		int numero = 0, diaAniversarioPoupanca = 0;
-		double valor[] = new double [9];
-		final double limite = 1000; //Conta especial
-		char opcaoPagamento,opcaoContinuar = 'S', opcaoContaAtivaNaoAtiva;
+		int numero = 0, diaAniversarioPoupanca = 0,contadorTalao = 3;
+		double valor[] = new double [10];
+		final double limite = 1000; 
+		final double valorTalao = 1000;//Conta especial e ContaCorrente
+		char opcaoPagamento,opcaoContinuar = 'S', opcaoContaAtivaNaoAtiva, opcao;
 		boolean ativa = true;
 		 
 		ContaPoupanca contaPoupanca = new ContaPoupanca(numero,cpf,ativa, diaAniversarioPoupanca);
-		//ContaCorrente contaCorrente = new ContaCorrente((numero,cpf,ativa,contadorTalao);
+		ContaCorrente contaCorrente = new ContaCorrente(numero,cpf,ativa,contadorTalao,valorTalao);
 		ContaEspecial contaEspecial = new ContaEspecial(numero,cpf,ativa,limite);
 		//ContaEmpresa contaEmpresa = new ContaEmpresa(numero,cpf,ativa,emprestimoEmpresa);
 		//ContaEstudantil contaEstudantil = new ContaEstudantil(numero,cpf,ativa,limiteEstudantil);
@@ -30,7 +32,7 @@ public class Teste {
 		
 		do {
 			System.out.println("|============================================|");
-			System.out.println("|              [ BANCO G-08 ]                |");
+			System.out.println("|           [ BANCO GEN18 G-08 ]             |");
 			System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
 			System.out.println("|--------------------------------------------|");
 			System.out.println("| [1] - CONTA POUPANÇA                       |");
@@ -47,7 +49,7 @@ public class Teste {
 			switch (tipoConta) {
 			case 1: {
 				System.out.println("|============================================|");
-				System.out.println("|              [ BANCO G-08 ]                |");
+				System.out.println("|           [ BANCO GEN18 G-08 ]             |");
 				System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
 				System.out.println("|--------------------------------------------|");
 				System.out.println("|             { CONTA POUPANÇA }             |");
@@ -73,12 +75,12 @@ public class Teste {
 					}
 				
 				
-			}break;
+			} break;
 			
 			case 2 : {
 				
 				System.out.println("|============================================|");
-				System.out.println("|              [ BANCO G-08 ]                |");
+				System.out.println("|           [ BANCO GEN18 G-08 ]             |");
 				System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
 				System.out.println("|--------------------------------------------|");
 				System.out.println("|             { CONTA CORRENTE }             |");
@@ -103,17 +105,69 @@ public class Teste {
 					break;
 					}
 				
+				//TELA 2
+				System.out.println("BANCO GEN-18 \nAQUI SEU DINHEIRO TEM VALOR\n!");
+				System.out.println("CONTA CORRENTE");
+				
+				System.out.print("Saldo Atual: R$ " + contaCorrente.getSaldo());
+				System.out.println();
+				
+				//CALCULO DO SALDO
+				for (int i = 0; i < 10; i++) {	
+					System.out.print("Digite o valor que deseja realizar o depósito: R$ ");
+					valor[i] = leia.nextDouble();
+					
+					System.out.print("Para deposito C para saque D [D/C]: ");
+					opcaoPagamento = leia.next().toUpperCase().charAt(0);
+					
+					System.out.print("Digite o valor da operação: R$ ");
+					valor[i] = leia.nextDouble();
+					
+					if (opcaoPagamento == 'D') {
+						contaCorrente.debito(valor[i]);
+						
+					}
+					else if (opcaoPagamento == 'C') {
+						contaCorrente.credito(valor[i]);
+						
+					}
+					
+					System.out.print("Voce deseja socilitar um talao? ");						
+					System.out.println("[S] - Sim | [N] - Nao");
+					opcao = leia.next().toUpperCase().charAt(0);
+					
+					if(opcao == 'S' && contaCorrente.getContadorTalao() > 0) {
+						System.out.println("Talao de cheque solicitado!");
+						contaCorrente.pediTalao();
+						
+					}else if(contaCorrente.getContadorTalao() == 0){
+						contaCorrente.pediTalao();
+						
+					}else {
+						System.out.println("Caso mude de ideia, volte aqui!");
+						
+					}
+					
+				}
+				
+				System.out.println(contaCorrente.getSaldo());
+				
+				//System.out.println("Valor movimentado R$: " ValorMovimentadoMetodo);
+				System.out.println("Deseja continuar? [S/N]: ");
+				opcaoContinuar = leia.next().toUpperCase().charAt(0);
+				//System.out.println("Opção inválida!");
+				
 			} break;
 						
 			case 3: {
 				
-				//CASO SEJA CONTA ESPECIAL	
+				//CASO SEJA CONTA ESPECIAL:	YURI
 				for (int i = 0; i < 15; i++) {
 					System.out.println();
 				}
 				
 					System.out.println("|============================================|");
-					System.out.println("|              [ BANCO G-08 ]                |");
+					System.out.println("|           [ BANCO GEN18 G-08 ]             |");
 					System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
 					System.out.println("|--------------------------------------------|");
 					System.out.println("|             { CONTA ESPECIAL }             |");
@@ -140,7 +194,7 @@ public class Teste {
 					
 					//CALCULO DO SALDO
 					
-						for (int i = 0; i <= 10; i++) {	
+						for (int i = 0; i < 10 ; i++) {	
 						System.out.print("Digite o valor da operação: R$ ");
 						valor[i] = leia.nextDouble();
 						System.out.print("Débito ou crédito? [D/C]: ");
@@ -155,12 +209,15 @@ public class Teste {
 						}
 						contaEspecial.usarLimite(valor[i]);
 						
-						System.out.println((i + 1)+ "º Movimento. Deseja continuar? [S/N]: ");
-						opcaoContinuar = leia.next().toUpperCase().charAt(0);
+						if (i <= 9) { 
+							System.out.println((i + 1)+ "º Movimento. Deseja continuar? [S/N]: ");
+							opcaoContinuar = leia.next().toUpperCase().charAt(0);
+						}
+						
 						}
 						if(opcaoContinuar == 'N') {
 							System.out.println("|============================================|");
-							System.out.println("|       Obrigado por utilizar o banco G-08   |");
+							System.out.println("|   Obrigado por utilizar o BANCO GEN18 G-08 |");
 							System.out.println("|============================================|");
 							break;
 						}
@@ -169,16 +226,26 @@ public class Teste {
 										
 					System.out.println("|   Limite de transações diárias atingido.   |");
 					System.out.println("|============================================|");
+					System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEspecial.getSaldo());
+					System.out.printf( "|            [ Limite:  R$  %.2f ]         |\n",contaEspecial.getLimite());
 					System.out.println("|       Obrigado por utilizar o banco G-08   |");
 					System.out.println("|============================================|");
 					break;
+			
+			default: {
+
+				System.out.println("Opção inválida!");
+				break;
+			}
+										
+					
 			case 4 : {
 				
 				System.out.println("|============================================|");
-				System.out.println("|              [ BANCO G-08 ]                |");
+				System.out.println("|           [ BANCO GEN18 G-08 ]             |");
 				System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
 				System.out.println("|--------------------------------------------|");
-				System.out.println("|             { CONTA EMPRESA }    	         |");
+				System.out.println("|             { CONTA EMPRESA }              |");
 				System.out.println("|============================================|");
 				System.out.print("Digite o numero da sua conta: ");
 				numero = leia.nextInt();
@@ -205,7 +272,7 @@ public class Teste {
 			case 5: {
 				
 				System.out.println("|============================================|");
-				System.out.println("|              [ BANCO G-08 ]                |");
+				System.out.println("|           [ BANCO GEN18 G-08 ]             |");
 				System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
 				System.out.println("|--------------------------------------------|");
 				System.out.println("|            { CONTA ESTUDANTIL }            |");

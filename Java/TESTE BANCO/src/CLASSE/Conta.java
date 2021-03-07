@@ -58,8 +58,8 @@ public class Conta {
 		for (int i = 0; i <15; i++) {
 			System.out.println();
 		}
-		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
 		this.saldo = this.saldo + valor;
+		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
 		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
 		System.out.println();
 		
@@ -73,7 +73,7 @@ public class Conta {
 		this.saldo = this.saldo - valor;
 		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 		System.out.println();
-		System.out.printf("Saldo Disponível: R$ %.2f \n", this.getSaldo());
+		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
 		}
 		else if (valor > saldo) {
 			for (int i = 0; i <15; i++) {
@@ -82,4 +82,4 @@ public class Conta {
 		}
 	}
 }
-		
+	

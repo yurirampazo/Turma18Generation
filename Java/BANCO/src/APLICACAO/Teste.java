@@ -1,7 +1,5 @@
 package APLICACAO;
 
-
-
 import java.util.Scanner;
 
 import CLASSES.ContaCorrente;
@@ -28,6 +26,10 @@ public class Teste {
 		ContaEspecial contaEspecial = new ContaEspecial(numero,cpf,ativa,limite);
 		ContaEmpresa contaEmpresa = new ContaEmpresa(numero,cpf,ativa,emprestimoEmpresa);
 		//ContaEstudantil contaEstudantil = new ContaEstudantil(numero,cpf,ativa,limiteEstudantil);
+		
+		
+		
+		
 	
 		//ATT:  ASSIM QUE AS CLASSES ESTIVEREM PRONTAS UNIMOS ELAS AO PROJETO.
 		//TELA 1 PARA TODAS SEGUE O MESMO PADRÃO, FAVOR ACRESCENTAR A APLICAÇÃO DE SUAS RESPECTIVAS CLASSES. MUITO OBRIGADO!
@@ -75,9 +77,45 @@ public class Teste {
 					System.out.println("Conta DESATIVADA!!!");
 					break;
 					}
+				System.out.print("Digite o dia de abertura da sua conta: ");
+				diaAniversarioPoupanca = leia.nextInt();
 				
+				for (int i = 0; i < 10 ; i++) {	
+				System.out.print("Digite o valor da operação: R$ ");
+				valor[i] = leia.nextDouble();
+				System.out.print("Débito ou crédito? [D/C]: ");
+				opcaoPagamento = leia.next().toUpperCase().charAt(0);
+				if (opcaoPagamento == 'D') {
+					contaPoupanca.debito(valor[i]);
+				}
+				else if (opcaoPagamento == 'C') {
+					contaPoupanca.credito(valor[i]);
+				}	else {
+					System.out.println("Opção inválida!");
+				}
 				
-			} break;
+				if (i <= 9) { 
+					System.out.println((i + 1)+ "º Movimento. Deseja continuar? [S/N]: ");
+					opcaoContinuar = leia.next().toUpperCase().charAt(0);
+				}
+				
+				if(opcaoContinuar == 'N') {
+					System.out.println("|============================================|");
+					System.out.println("|   Obrigado por utilizar o BANCO GEN18 G-08 |");
+					System.out.println("|============================================|");
+					break;
+				}
+				}
+				System.out.println("|   Limite de transações diárias atingido.   |");
+				System.out.println("|============================================|");
+				System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEspecial.getSaldo());
+				
+				System.out.println("|  Obrigado por utilizar o BANCO GEN18 G-08  |");
+				System.out.println("|============================================|");
+								
+					
+				break;	
+			}
 			
 			case 2 : {
 				
@@ -277,26 +315,36 @@ public class Teste {
 						opcao = leia.next().toUpperCase().charAt(0);
 						
 						if (opcao == 'D') {
-							contaEmpresa.debito(valor);	
+							contaEmpresa.debito(valor[i]);	
 							
 						}
 						else if (opcao == 'C') {
-							contaEmpresa.credito(valor);
+							contaEmpresa.credito(valor[i]);
 						
 						}
 						else {
 							System.out.println("Opção inválida!");
 							
 						}
-						
-						contaEmpresa.getEmprestimoEmpresa();		
-						System.out.println(i + 1+ "º Movimento. Deseja continuar? [S/N]: ");
+						System.out.println("Deseja continuar realizar um empréstimo? [S/N]: ");
 						opcaoContinuar = leia.next().toUpperCase().charAt(0);
+						
+						if (opcaoContinuar == 'S') {	
+						contaEmpresa.getEmprestimoEmpresa();
+						
+						
+						
+						}
+						else if (opcaoContinuar =='N') {
+							System.out.println("Limite já utilizado.");
+							break;
+							
+						}
+						
+					} 	
 					
-					} 	}	
-			
-			
-			
+			}	
+		
 			default: {
 
 				System.out.println("Opção inválida!");
@@ -304,11 +352,24 @@ public class Teste {
 			} 
 			
 		} 
+			System.out.println("Deseja continuar realizar um empréstimo? [S/N]: ");
+			opcaoContinuar = leia.next().toUpperCase().charAt(0);
 			
-		System.out.println("Deseja continuar? [S/N]: ");
-		opcaoContinuar = leia.next().toUpperCase().charAt(0);
-			
-		
+			if (opcaoContinuar == 'S') {	
+			contaEmpresa.getEmprestimoEmpresa();
+			System.out.println("|   Limite de transações diárias atingido.   |");
+			System.out.println("|============================================|");
+			System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEspecial.getSaldo());
+			System.out.printf( "|            [ Limite:  R$  %.2f ]         |\n",contaEmpresa.getEmprestimoEmpresa());
+			System.out.println("|  Obrigado por utilizar o BANCO GEN18 G-08  |");
+			System.out.println("|============================================|");
+			break;							
+			}
+			else if (opcaoContinuar =='N') {
+				System.out.println("Limite já utilizado.");
+				break;
+				
+			}
 		
 		}while (opcaoContinuar == 'N');
 		leia.close();	

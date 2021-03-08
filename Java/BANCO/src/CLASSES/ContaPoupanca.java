@@ -22,10 +22,10 @@ public class ContaPoupanca extends Conta {
     //MÉTODO POUPANCA
     public void correcao(int dia) {
         double valor = 0.00;
-
-        if(dia==diaAniversarioPoupanca) {
+   
+              if(dia==diaAniversarioPoupanca) {
             valor = (super.getSaldo()*0.005);
-            super.credito(valor);
+           super.credito(valor);
         }
     }
 }	

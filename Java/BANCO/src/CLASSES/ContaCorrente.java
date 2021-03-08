@@ -1,16 +1,17 @@
 package CLASSES;
 
 public class ContaCorrente extends Conta {
+	//ATRIBUTOS
 	private int contadorTalao;
 	private double valorTalao;
-	
+	//CONSTRUTOR
 	public ContaCorrente(int numero, String cpf, boolean ativa, int contadorTalao,double valorTalao){
 		super(numero,cpf, ativa);
         this.contadorTalao= contadorTalao;
         this.valorTalao = valorTalao;
 	}
 	
-	
+	//ENCAPSULAMENTO
 	public double getValorTalao() {
 		return valorTalao;
 	}
@@ -48,7 +49,7 @@ public class ContaCorrente extends Conta {
 	 // SITUAÇÃO NORMAL EM QUE O SALDO É MAIOR QUE O VALOR DEBITADO!
 	//SITUAÇÃO ESPECIAL, CASO SEJA UTILIZADO O LIMIT
 	public void debito (double valor) { 
-		if (this.saldo >= valor) {
+		if (this.getSaldo() >= valor) {
 			this.saldo = this.saldo - valor;
 			System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 			

@@ -70,7 +70,7 @@ public class Conta {
 		for (int i = 0; i <15; i++) {
 			System.out.println();
 		}
-		if (this.saldo >= valor) {
+		if (this.getSaldo() >= valor) {
 		this.saldo = this.saldo - valor;
 		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 		System.out.println();

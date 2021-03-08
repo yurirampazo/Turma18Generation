@@ -159,7 +159,13 @@ public class Teste {
 						System.out.print("Débito ou crédito? [D/C]: ");
 						opcaoPagamento = leia.next().toUpperCase().charAt(0);
 						if (opcaoPagamento == 'D') {
-							contaEstudantil.debito(valor[i]);
+							if(valor[i] > contaEstudantil.getSaldo()) {
+								contaEstudantil.usarLimite(valor[i]);
+						}
+							else if(valor[i] <= contaEstudantil.getSaldo()) {
+								
+								contaEstudantil.debito(valor[i]);
+							}
 						}
 						else if (opcaoPagamento == 'C') {
 							contaEstudantil.credito(valor[i]);
@@ -312,10 +318,13 @@ public class Teste {
 						System.out.print("Débito ou crédito? [D/C]: ");
 						opcaoPagamento = leia.next().toUpperCase().charAt(0);
 						if (opcaoPagamento == 'D') {
-							contaEspecial.debito(valor[i]);
 							if(valor[i] > contaEspecial.getSaldo()) {
 									contaEspecial.usarLimite(valor[i]);
 						}
+							else if(valor[i] <= contaEspecial.getSaldo()) {
+								
+								contaEspecial.debito(valor[i]);
+							}
 						}
 						else if (opcaoPagamento == 'C') {
 							contaEspecial.credito(valor[i]);
@@ -382,20 +391,23 @@ public class Teste {
 					System.out.println();
 					//CALCULO DO SALDO
 					int cont = 0;
-					double valorEmprestimo;
 					for (int i = 0; i <10; i++) {	
 						
 						System.out.print("Digite o valor da operação: R$ ");
 						valor[i] = leia.nextDouble();
 						
 						System.out.print("Débito ou crédito? [D/C]: ");
-						opcao = leia.next().toUpperCase().charAt(0);
-						
-						if (opcao == 'D') {
-							contaEmpresa.debito(valor[i]);	
-							
+						opcaoPagamento = leia.next().toUpperCase().charAt(0);
+						if (opcaoPagamento == 'D') {
+							if(valor[i] > contaEstudantil.getSaldo()) {
+								contaEstudantil.usarLimite(valor[i]);
 						}
-						else if (opcao == 'C') {
+							else if(valor[i] <= contaEstudantil.getSaldo()) {
+								
+								contaEstudantil.debito(valor[i]);
+							}
+						}
+						else if (opcaoPagamento == 'C') {
 							contaEmpresa.credito(valor[i]);
 						
 						}
@@ -406,11 +418,14 @@ public class Teste {
 						System.out.println("Deseja realizar um empréstimo? [S/N]: ");
 						opcaoContinuar = leia.next().toUpperCase().charAt(0);
 						System.out.println("Informe o valor para empréstimo: R$ ");
-						valorEmprestimo = leia.nextDouble();
+						valor[i] = leia.nextDouble();
 						if (opcaoContinuar == 'S') {	
 							if(cont <=1) {
 								contaEmpresa.pedirEmprestimo(valor[i]);
+								System.out.printf("Empréstimo realizado no valor de R$ %.2f\n",valor[i]);
 								cont++;							
+							} else if (opcaoContinuar != 'S' && opcaoContinuar == 'S') {
+								System.out.println("Opção empréstimo não solicitada.");
 							}
 							else {
 								System.out.println("Limite já utilizado.");

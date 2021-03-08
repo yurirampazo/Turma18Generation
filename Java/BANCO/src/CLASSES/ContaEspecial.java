@@ -31,14 +31,14 @@ public class ContaEspecial extends Conta{ 	//Yuri Mina Rampazo
 			System.out.printf("Saldo Disponível R$ %.2f \n", super.getSaldo());
 			System.out.printf("Limite Disponível R$ %.2f \n", this.limite);
 		} 
-	
 	}
 	@Override
 	public void debito (double valor) { 
 		for (int i = 0; i <15; i++) {
 			System.out.println();
 		}
-		if (this.saldo >= valor) {
+		if (valor <= this.getSaldo()){
+		
 		this.saldo = this.saldo - valor;
 		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 		System.out.println();
@@ -46,6 +46,7 @@ public class ContaEspecial extends Conta{ 	//Yuri Mina Rampazo
 		System.out.println("Limite Disponível: "+ limite);
 		}
 		else if (valor > saldo) {
+			
 			for (int i = 0; i <15; i++) {
 				System.out.println();
 			}System.out.println("Saldo insuficiente. Operação inválida");

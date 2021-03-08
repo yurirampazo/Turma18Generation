@@ -361,7 +361,7 @@ public class Teste {
 				for (int i = 0; i < 15; i++) {
 					System.out.println();
 				}
-				
+				 char opcaoEmprestimo = 'N';
 					System.out.println("|============================================|");
 					System.out.println("|           [ BANCO GEN18 G-08 ]             |");
 					System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
@@ -391,6 +391,7 @@ public class Teste {
 					System.out.println();
 					//CALCULO DO SALDO
 					int cont = 0;
+					double valorEmprestimo = 0;
 					for (int i = 0; i <10; i++) {	
 						
 						System.out.print("Digite o valor da operação: R$ ");
@@ -399,44 +400,52 @@ public class Teste {
 						System.out.print("Débito ou crédito? [D/C]: ");
 						opcaoPagamento = leia.next().toUpperCase().charAt(0);
 						if (opcaoPagamento == 'D') {
-							if(valor[i] > contaEstudantil.getSaldo()) {
-								contaEstudantil.usarLimite(valor[i]);
-						}
-							else if(valor[i] <= contaEstudantil.getSaldo()) {
-								
-								contaEstudantil.debito(valor[i]);
-							}
+							contaPoupanca.debito(valor[i]);
+
+							System.out.println("Deseja realizar um empréstimo? [S/N]: ");
+							opcaoEmprestimo = leia.next().toUpperCase().charAt(0);
+							System.out.println("Informe o valor para empréstimo: R$ ");
+							
+							if (opcaoEmprestimo == 'S') {	
+								if(cont <=1) {
+									System.out.println("Informe o valor para empréstimo: R$ ");
+									contaEmpresa.pedirEmprestimo(valorEmprestimo);
+									System.out.printf("Empréstimo realizado no valor de R$ %.2f\n",valorEmprestimo);
+									cont++;							
+								} else if (opcaoEmprestimo != 'S' && opcaoEmprestimo == 'N') {
+									System.out.println("Opção empréstimo não solicitada.");
+								}
+								else {
+									System.out.println("Limite já utilizado.");
+									break;
+									
+								}
+							
 						}
 						else if (opcaoPagamento == 'C') {
-							contaEmpresa.credito(valor[i]);
-						
-						}
-						else {
+							contaPoupanca.credito(valor[i]);
+							System.out.println("Deseja realizar um empréstimo? [S/N]: ");
+							opcaoEmprestimo = leia.next().toUpperCase().charAt(0);
+							
+							if (opcaoEmprestimo == 'S') {	
+								if(cont <=1) {
+									System.out.println("Informe o valor para empréstimo: R$ ");
+									contaEmpresa.pedirEmprestimo(valor[i]);
+									System.out.printf("Empréstimo realizado no valor de R$ %.2f\n",valor[i]);
+									cont++;							
+								} else if (opcaoEmprestimo != 'S' && opcaoEmprestimo == 'N') {
+									System.out.println("Opção empréstimo não solicitada.");
+								}
+							
+							}
+						}else {
 							System.out.println("Opção inválida!");
-							
 						}
-						System.out.println("Deseja realizar um empréstimo? [S/N]: ");
-						opcaoContinuar = leia.next().toUpperCase().charAt(0);
-						System.out.println("Informe o valor para empréstimo: R$ ");
-						valor[i] = leia.nextDouble();
-						if (opcaoContinuar == 'S') {	
-							if(cont <=1) {
-								contaEmpresa.pedirEmprestimo(valor[i]);
-								System.out.printf("Empréstimo realizado no valor de R$ %.2f\n",valor[i]);
-								cont++;							
-							} else if (opcaoContinuar != 'S' && opcaoContinuar == 'S') {
-								System.out.println("Opção empréstimo não solicitada.");
-							}
-							else {
-								System.out.println("Limite já utilizado.");
-								break;
-								
-							}
-							
-						}
-					} 	
-			}	
-		} 
+					}
+				}
+			} 	
+		}	
+		
 			System.out.println("Deseja continuar realizar um empréstimo? [S/N]: ");
 			opcaoContinuar = leia.next().toUpperCase().charAt(0);
 			

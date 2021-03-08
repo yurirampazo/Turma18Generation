@@ -14,7 +14,7 @@ public class Teste {
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
 		String cpf= "";
-		int numero = 0, diaAniversarioPoupanca = 0,contadorTalao = 3;
+		int numero = 0, diaAniversarioPoupanca = 0,hoje = 8,contadorTalao = 3;
 		double valor[] = new double [10];
 		final double limite = 1000; 
 		final double valorTalao = 1000;//Conta especial e ContaCorrente
@@ -28,14 +28,10 @@ public class Teste {
 		ContaEspecial contaEspecial = new ContaEspecial(numero,cpf,ativa,limite);
 		ContaEmpresa contaEmpresa = new ContaEmpresa(numero,cpf,ativa,emprestimoEmpresa);
 		ContaEstudantil contaEstudantil = new ContaEstudantil(numero,cpf,ativa,limiteEstudantil);
-		
-		
-		
-		
 	
 		//ATT:  ASSIM QUE AS CLASSES ESTIVEREM PRONTAS UNIMOS ELAS AO PROJETO.
 		//TELA 1 PARA TODAS SEGUE O MESMO PADRÃO, FAVOR ACRESCENTAR A APLICAÇÃO DE SUAS RESPECTIVAS CLASSES. MUITO OBRIGADO!
-		
+
 		do {
 			System.out.println("|============================================|");
 			System.out.println("|           [ BANCO GEN18 G-08 ]             |");
@@ -79,9 +75,7 @@ public class Teste {
 					System.out.println("Conta DESATIVADA!!!");
 					break;
 					}
-				System.out.print("Digite o dia de abertura da sua conta: ");
-				diaAniversarioPoupanca = leia.nextInt();
-				
+					
 				for (int i = 0; i < 10 ; i++) {	
 				System.out.print("Digite o valor da operação: R$ ");
 				valor[i] = leia.nextDouble();
@@ -107,6 +101,13 @@ public class Teste {
 					System.out.println("|============================================|");
 					break;
 				}
+				}
+				System.out.print("Digite o dia de abertura da sua conta: ");
+				diaAniversarioPoupanca = leia.nextInt();
+				if(diaAniversarioPoupanca == hoje) {
+					contaPoupanca.getDiaAniversarioPoupanca();;
+					
+					
 				}
 				System.out.println("|   Limite de transações diárias atingido.   |");
 				System.out.println("|============================================|");

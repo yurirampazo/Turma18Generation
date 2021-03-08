@@ -28,7 +28,7 @@ public class ContaEstudantil extends Conta {//Diego
 	public void usarLimite (double valor) {
 		
 		if (valor > super.getSaldo() && valor <= super.getSaldo() + limiteEstudantil) {
-			System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta especial.");
+			System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta estudantil.");
 			double dif = 0.00;
 			dif = valor - super.getSaldo();
 			

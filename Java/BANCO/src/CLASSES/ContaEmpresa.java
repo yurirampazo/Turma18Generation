@@ -22,7 +22,7 @@ public class ContaEmpresa extends Conta{ 	//Lucas Zamora
 	public void pedirEmprestimo (double valor) {
 				
 		if (valor <= super.getSaldo() + emprestimoEmpresa) {
-			System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta especial.");
+			System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta empresa.");
 			double dif = 0.00;
 			dif = valor - super.getSaldo();
 			

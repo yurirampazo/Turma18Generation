@@ -31,48 +31,35 @@ public class ContaCorrente extends Conta {
 		this.contadorTalao = 3;
 	}
 
-
-	/*@Override	
-	public void credito(double valor) {
-		for (int i = 0; i <15; i++) {
-			System.out.println();
-		}
-		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
-		this.saldo = this.saldo + valor;
-		System.out.printf("Saldo Disponível: R$ %.2f \n", getSaldo());
-		System.out.println();
-		
-	}*/
-		
 	@Override
-	
 	 // SITUAÇÃO NORMAL EM QUE O SALDO É MAIOR QUE O VALOR DEBITADO!
 	//SITUAÇÃO ESPECIAL, CASO SEJA UTILIZADO O LIMIT
 	public void debito (double valor) { 
-		if (this.getSaldo() >= valor) {
-			this.saldo = this.saldo - valor;
+		double saldo = super.getSaldo();
+		if (super.getSaldo() >= valor) {
+			saldo -= valor;
+			super.debito(saldo);
 			System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
-			
 			System.out.println();
-			System.out.printf("Saldo R$ %.2f \n", this.getSaldo());
+			System.out.printf("Saldo R$ %.2f \n", super.getSaldo());
 			
-		}else if (valor > saldo && contadorTalao > 0 && contadorTalao <= 3) {
+		}else if (valor > super.getSaldo() && contadorTalao > 0 && contadorTalao <= 3) {
 			System.out.println("Seu saldo acabou, a partir de agora você tem direito a utilizar 1 de 3 dos talões disponiveis.");
 			//this.saldo = valorTalao;
 			//this.contadorTalao--;
 			
 			this.pediTalao();
 			
-			this.saldo = this.saldo - valor;
-			this.saldo = this.saldo + valorTalao;
-			
+			saldo -= valor;
+			saldo += valorTalao;
+			super.debito(saldo);
 			System.out.println("Voce acabaou de solicitar um talao de R$ "+ valorTalao /*+" do Talão de cheques. "+ valor*/);
 			System.out.println("Saque R$ "+ valor);
-			System.out.printf("Valor restante do talao R$ %.2f \n", this.getSaldo());
+			System.out.printf("Valor restante do talao R$ %.2f \n", super.getSaldo());
 			
-		}else if (valor > saldo && contadorTalao == 0) {
+		}else if (valor > super.getSaldo() && contadorTalao == 0) {
 			System.out.println("Você não pode realizar essa operação. seus taloes de cheque acabaram!");
-			System.out.printf("Saldo R$ %.2f \n", this.getSaldo());	
+			System.out.printf("Saldo R$ %.2f \n", super.getSaldo());	
 			
 		}		
 	}
@@ -85,9 +72,6 @@ public class ContaCorrente extends Conta {
 		
 		}else {
 			System.out.println("Voce ja utilizou todos seus taloes do mes!");
-			
 		}
-		
 	}
-	
 }

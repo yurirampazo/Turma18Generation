@@ -110,8 +110,8 @@ public class Teste {
 				}
 				System.out.println("|   Limite de transações diárias atingido.   |");
 				System.out.println("|============================================|");
-				System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEspecial.getSaldo());
-				System.out.println("|  Obrigado por utilizar o BANCO GEN18 G-08  |");
+				System.out.printf( "            [ Saldo:  R$  %.2f ]            \n", contaEspecial.getSaldo());
+				System.out.println("  Obrigado por utilizar o BANCO GEN18 G-08  ");
 				System.out.println("|============================================|");
 								
 					
@@ -182,9 +182,9 @@ public class Teste {
 						}
 						System.out.println("|   Limite de transações diárias atingido.   |");
 						System.out.println("|============================================|");
-						System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEstudantil.getSaldo());
-						System.out.printf( "|            [ Limite:  R$  %.2f ]         |\n",contaEstudantil.getLimiteEstudantil());
-						System.out.println("|  Obrigado por utilizar o BANCO GEN18 G-08  |");
+						System.out.printf( "            [ Saldo:  R$  %.2f ]            \n", contaEstudantil.getSaldo());
+						System.out.printf( "            [ Limite:  R$  %.2f ]         \n",contaEstudantil.getLimiteEstudantil());
+						System.out.println("  Obrigado por utilizar o BANCO GEN18 G-08  ");
 						System.out.println("|============================================|");
 						break;	
 							
@@ -313,13 +313,16 @@ public class Teste {
 						opcaoPagamento = leia.next().toUpperCase().charAt(0);
 						if (opcaoPagamento == 'D') {
 							contaEspecial.debito(valor[i]);
+							if(valor[i] > contaEspecial.getSaldo()) {
+									contaEspecial.usarLimite(valor[i]);
+						}
 						}
 						else if (opcaoPagamento == 'C') {
 							contaEspecial.credito(valor[i]);
 						}	else {
 							System.out.println("Opção inválida!");
 						}
-						contaEspecial.usarLimite(valor[i]);
+						
 						
 						if (i <= 9) { 
 							System.out.println((i + 1)+ "º Movimento. Deseja continuar? [S/N]: ");
@@ -335,9 +338,9 @@ public class Teste {
 						}
 						System.out.println("|   Limite de transações diárias atingido.   |");
 						System.out.println("|============================================|");
-						System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEspecial.getSaldo());
-						System.out.printf( "|            [ Limite:  R$  %.2f ]         |\n",contaEspecial.getLimite());
-						System.out.println("|  Obrigado por utilizar o BANCO GEN18 G-08  |");
+						System.out.printf( "            [ Saldo:  R$  %.2f ]            \n", contaEspecial.getSaldo());
+						System.out.printf( "            [ Limite:  R$  %.2f ]         \n",contaEspecial.getLimite());
+						System.out.println("  Obrigado por utilizar o BANCO GEN18 G-08  ");
 						System.out.println("|============================================|");
 						break;	
 							
@@ -417,9 +420,7 @@ public class Teste {
 							
 						}
 					} 	
-					
 			}	
-			
 		} 
 			System.out.println("Deseja continuar realizar um empréstimo? [S/N]: ");
 			opcaoContinuar = leia.next().toUpperCase().charAt(0);
@@ -428,9 +429,9 @@ public class Teste {
 			contaEmpresa.getEmprestimoEmpresa();
 			System.out.println("|   Limite de transações diárias atingido.   |");
 			System.out.println("|============================================|");
-			System.out.printf( "|            [ Saldo:  R$  %.2f ]            |\n", contaEspecial.getSaldo());
-			System.out.printf( "|            [ Limite:  R$  %.2f ]         |\n",contaEmpresa.getEmprestimoEmpresa());
-			System.out.println("|  Obrigado por utilizar o BANCO GEN18 G-08  |");
+			System.out.printf( "           [ Saldo:  R$  %.2f ]            \n", contaEspecial.getSaldo());
+			System.out.printf( "            [ Limite:  R$  %.2f ]         \n",contaEmpresa.getEmprestimoEmpresa());
+			System.out.println("  Obrigado por utilizar o BANCO GEN18 G-08  ");
 			System.out.println("|============================================|");
 			break;							
 			}

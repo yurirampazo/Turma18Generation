@@ -419,8 +419,8 @@ public class Teste {
 						opcaoPagamento = leia.next().toUpperCase().charAt(0);
 						if (opcaoPagamento == 'D') {
 							if(valor[i] > contaEstudantil.getSaldo()) {
-								contaEstudantil.usarLimite(valor[i]);
-						}
+								contaEstudantil.usarEstudantil(valor[i]);
+							}
 							else if(valor[i] <= contaEstudantil.getSaldo()) {
 								
 								contaEstudantil.debito(valor[i]);
@@ -431,7 +431,7 @@ public class Teste {
 						}	else {
 							System.out.println("Opção inválida!");
 						}
-						contaEstudantil.usarLimite(valor[i]);
+						contaEstudantil.usarEstudantil(valor[i]);
 						
 						if (i <= 9) { 
 							System.out.println((i + 1)+ "º Movimento. Deseja continuar? [S/N]: ");

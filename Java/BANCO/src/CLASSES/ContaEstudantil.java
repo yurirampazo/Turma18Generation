@@ -3,7 +3,7 @@ package CLASSES;
 public class ContaEstudantil extends Conta {//Diego
 	private double limiteEstudantil= 5000.00;
 	
-	public ContaEstudantil ( int numero, String cpf,boolean ativa, double limiteEstudantil) {
+	public ContaEstudantil ( int numero, String cpf,boolean ativa,	 double limiteEstudantil) {
 		super(numero,cpf);
 		this.limiteEstudantil = limiteEstudantil;
 	}

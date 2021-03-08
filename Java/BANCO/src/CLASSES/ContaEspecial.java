@@ -19,7 +19,7 @@ public class ContaEspecial extends Conta{ 	//Yuri Mina Rampazo
 	//MÉTODO especial SITUAÇÃO ESPECIAL, CASO SEJA UTILIZADO O LIMIT
 	public void usarLimite (double valor) {
 				
-		if (valor > super.getSaldo() && valor <= super.getSaldo() + limite) {
+		if (super.getSaldo() < valor && valor <= super.getSaldo() + limite) {
 			System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta especial.");
 			double dif = 0.00;
 			dif = valor - super.getSaldo();

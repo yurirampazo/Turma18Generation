@@ -379,6 +379,7 @@ public class Teste {
 					System.out.println();
 					//CALCULO DO SALDO
 					int cont = 0;
+					double valorEmprestimo;
 					for (int i = 0; i <10; i++) {	
 						
 						System.out.print("Digite o valor da operação: R$ ");
@@ -401,7 +402,8 @@ public class Teste {
 						}
 						System.out.println("Deseja realizar um empréstimo? [S/N]: ");
 						opcaoContinuar = leia.next().toUpperCase().charAt(0);
-						
+						System.out.println("Informe o valor para empréstimo: R$ ");
+						valorEmprestimo = leia.nextDouble();
 						if (opcaoContinuar == 'S') {	
 							if(cont <=1) {
 								contaEmpresa.pedirEmprestimo(valor[i]);
@@ -436,9 +438,6 @@ public class Teste {
 				System.out.println("Limite já utilizado.");
 				break;
 			}
-			
-			
-		
 		}while (opcaoContinuar == 'N');
 		leia.close();	
 	}

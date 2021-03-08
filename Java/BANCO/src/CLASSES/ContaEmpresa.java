@@ -31,7 +31,7 @@ public class ContaEmpresa extends Conta{ 	//Lucas Zamora
 			
 			System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 			System.out.printf("Saldo Disponível R$ %.2f \n", super.getSaldo());
-			System.out.printf("Limite de Empréstimo: R$ %.2f \n", this.emprestimoEmpresa);
+			System.out.printf("L: R$ %.2f \n", this.emprestimoEmpresa);
 		} 
 	
 	}

@@ -249,6 +249,8 @@ public class Teste {
 							else if(valor[i] <= contaEspecial.getSaldo()) {
 								
 								contaEspecial.debito(valor[i]);
+								System.out.printf("Limite Dispnível: R$ %.2f ",contaEspecial.getLimite());
+								System.out.println();
 							}
 						}
 						else if (opcaoPagamento == 'C') {

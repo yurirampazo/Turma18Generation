@@ -18,14 +18,14 @@ public class ContaEstudantil extends Conta {//Diego
 
 
 	public double usarEstudantil(double valor) {
-		double saldo = super.getSaldo();
-		if (saldo < valor && valor <= saldo + limiteEstudantil) {
+		
+		if (super.getSaldo() < valor && valor <= super.getSaldo() + limiteEstudantil) {
 			double dif = 0;
-			dif = valor - saldo;
+			dif = valor - super.getSaldo();
 			limiteEstudantil = limiteEstudantil - dif;
 			super.credito(dif);
 			System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
-			System.out.printf("Saldo Disponível R$ %.2f \n", saldo);
+			System.out.printf("Saldo Disponível R$ %.2f \n", super.getSaldo());
 			System.out.printf("Limite Disponível R$ %.2f \n", this.limiteEstudantil);
 		}
 	

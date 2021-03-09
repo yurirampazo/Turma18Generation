@@ -157,6 +157,9 @@ public class Teste {
 				
 				//CALCULO DO SALDO
 				for (int i = 0; i < 10; i++) {	
+					for (int x =0; x <= 15; x++) {
+						System.out.println();
+					}
 					System.out.print("Digite o valor que deseja realizar o depósito: R$ ");
 					valor[i] = leia.nextDouble();
 					
@@ -198,6 +201,10 @@ public class Teste {
 				//System.out.println("Valor movimentado R$: " ValorMovimentadoMetodo);
 				System.out.println("Deseja continuar? [S/N]: ");
 				opcaoContinuar = leia.next().toUpperCase().charAt(0);
+				for (int x =0; x <= 15; x++) {
+					System.out.println();
+				}
+				
 				//System.out.println("Opção inválida!");
 				
 			} break;

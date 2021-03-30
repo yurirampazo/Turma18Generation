@@ -1,10 +1,10 @@
-package CLASSE;
+package CLASSES;
 
 public class Conta {
 	//atributos da classe Conta, dentro do pacote CLASSES: 
 	private int numero;											
 	private String cpf;											
-	protected double saldo;												
+	private double saldo;												
 	private boolean ativa;								
 	 	 		
 	
@@ -55,6 +55,7 @@ public class Conta {
 	
 	//METODOS
 	public void credito(double valor) {
+		
 		for (int i = 0; i <15; i++) {
 			System.out.println();
 		}
@@ -69,7 +70,7 @@ public class Conta {
 		for (int i = 0; i <15; i++) {
 			System.out.println();
 		}
-		if (this.saldo >= valor) {
+		if (this.getSaldo() >= valor) {
 		this.saldo = this.saldo - valor;
 		System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
 		System.out.println();

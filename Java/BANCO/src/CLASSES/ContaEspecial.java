@@ -24,7 +24,7 @@ public class ContaEspecial extends Conta{ 	//Yuri Mina Rampazo
 			double dif = 0.00;
 			dif = valor - super.getSaldo();
 			
-			limite = limite - dif;
+			limite -= dif;
 			super.credito(dif);
 			
 			System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);

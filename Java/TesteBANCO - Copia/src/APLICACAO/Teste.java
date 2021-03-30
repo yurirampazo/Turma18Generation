@@ -234,11 +234,11 @@ public class Teste {
 					if (opcaoContaAtivaNaoAtiva == '1') {
 						
 						ativa = true;
-						System.out.println("Conta ativada. Por favor, aguarde um momento");
+						System.out.println("Conta ativada.");
 						} 
-						else if (){
+						else {
 						ativa = false;
-						System.out.println("Conta Inativa.");
+						System.out.println("Conta DESATIVADA!!!");
 						break;
 						}
 					

@@ -69,7 +69,7 @@ public class Conta {
 		if (valor > 0 ) {
 		Aplicacao.limparTela();
 			this.saldo = this.saldo + valor;
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.out.println("|             DEPÓSITO REALIZADO.            |"); 
 			System.out.println("|--------------------------------------------|");
 			System.out.printf("        [ VALOR CREDITADO: R$ %.2f ]      ", valor);
@@ -107,7 +107,7 @@ public class Conta {
 	
 
 	public void consultarSaldo() {
-		System.out.println("|============================================|");
+		System.out.println("|--------------------------------------------|");
 		System.out.printf("       [ SALDO DISPONÍVEL:  R$  %.2f ] \n",this.getSaldo());
 	}		 
 }

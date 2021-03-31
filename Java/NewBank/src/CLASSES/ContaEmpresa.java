@@ -19,7 +19,6 @@ public class ContaEmpresa extends Conta {
 	}
 	
 	public double pedirEmprestimo (double valor) {
-		// double saldo = super.getSaldo();
 		if (valor <= this.emprestimoEmpresa) {
 			this.emprestimoEmpresa -= valor;
 			super.creditar(valor);
@@ -36,10 +35,10 @@ public class ContaEmpresa extends Conta {
 	@Override
 	public void consultarSaldo() {
 		System.out.println("|============================================|");
-		System.out.printf("       [ SALDO DISPONÍVEL:  R$  %.2f ]  ",super.getSaldo());
+		System.out.printf("         SALDO DISPONÍVEL:  R$  %.2f    ",super.getSaldo());
 		System.out.println(" ");
 		System.out.println("|--------------------------------------------|");
-		System.out.printf("   [ LIMITE EMPRESARIAL DISPONÍVEL: R$ %.2f ] ",this.emprestimoEmpresa);
+		System.out.printf("         LIMITE DISPONÍVEL: R$ %.2f   ",this.emprestimoEmpresa);
 		System.out.println(" ");
 	}	
 }

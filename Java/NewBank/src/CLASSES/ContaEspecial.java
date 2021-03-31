@@ -39,7 +39,7 @@ public class ContaEspecial extends Conta{
 	}
 	
 	public static void informarLimite(int caseFour) {
-		System.out.println("|============================================|");
+		System.out.println("|--------------------------------------------|");
 		System.out.println("|   OPERAÇÃO EXCLUSIVA PARA CONTA ESPECIAL   |");
 		System.out.println("|--------------------------------------------|");
 		System.out.println("|               LIMITE ESPECIAL:             |");

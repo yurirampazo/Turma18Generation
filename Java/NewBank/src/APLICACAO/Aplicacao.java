@@ -16,9 +16,9 @@ public class Aplicacao {
 		System.out.print("| Deseja mesmo sair? [S/N]:                  |");
 		opcaoContinuar = leia.next().toUpperCase().charAt(0);
 		if (opcaoContinuar == 'S') {
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.out.println("|      OBRIGADO POR UTILIZAR O NEW BANK      |");
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.exit(0);
 		}
 		else if (opcaoContinuar == 'N') {
@@ -31,15 +31,15 @@ public class Aplicacao {
 		return opcaoContinuar;
 	}
 	public static void encerrarPorLimite() {				//MENSSAGEM DE LIMITE DE ACESSOS UTILIZADO, FORÇA ENCERRAMENTO.
-		System.out.println("|============================================|");
+		System.out.println("|--------------------------------------------|");
 		System.out.println("|  LIMITE DE MOVIMENTAÇÕES DIÁRIAS ATINGIDO  |");
 		System.out.println("|--------------------------------------------|");
 		System.out.println("|      OBRIGADO POR UTILIZAR O NEW BANK      |");
-		System.out.println("|============================================|");
+		System.out.println("|--------------------------------------------|");
 	}
 	public static int invalidarOpcaoMenu (int opcaoOperacao) {   //MÉTODO PARA INVALIDAR ERROS PROVENIENTES DO USUÁRIO NO MENU DE ATIVIDADES
 		do {
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.out.println("|               OPÇÃO INVÁLIDA               |");
 			System.out.println("|--------------------------------------------|");
 			System.out.println("| Deseja tentar novamente? [S/N]:            |");
@@ -60,7 +60,7 @@ public class Aplicacao {
 	}
 	public static char invalidarOpcao (char opcaoContinuar) {   //MÉTODO PARA INVALIDAR ERROS PROVENIENTES DO USUÁRIO
 		do {
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.out.println("|               OPÇÃO INVÁLIDA               |");
 			System.out.println("|--------------------------------------------|");
 			System.out.println("| Deseja encerrar as atividades? [S/N]:      |");
@@ -81,7 +81,7 @@ public class Aplicacao {
 	}
 	public static int invalidarOpcaoContas (int opcaoConta) {   //MÉTODO PARA INVALIDAR ERROS PROVENIENTES DO USUÁRIO NAS OPÇOES DE CONTA
 		do {
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.out.println("|               OPÇÃO INVÁLIDA               |");
 			System.out.println("|--------------------------------------------|");
 			System.out.println("| Deseja tentar novamente? [S/N]:            |");
@@ -104,9 +104,9 @@ public class Aplicacao {
 		System.out.print("| Deseja mesmo sair? [S/N]:                  |");
 		opcaoContinuar = leia.next().toUpperCase().charAt(0);
 		if (opcaoContinuar == 'S') {
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.out.println("|      OBRIGADO POR UTILIZAR O NEW BANK      |");
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.exit(0);
 		}
 		else if (opcaoContinuar == 'N') {
@@ -119,18 +119,18 @@ public class Aplicacao {
 		return opcaoContinuar;
 	}
 	public static short verificarAtividade(short opcaoAtividade, boolean ativa) {  // STATUS DA CONTA(ATIVA/INATIVA)
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");
 			System.out.println("|    POR FAVOR, INFORME O STATUS DA CONTA:   |");
 			System.out.println("|--------------------------------------------|");
 			System.out.println("|[1] -> CONTA ATIVA                          |");
 			System.out.println("|[2] -> CONTA INATIVA                        |");
-			System.out.println("|============================================|");
+			System.out.println("|--------------------------------------------|");;
 					
 			opcaoAtividade = leia.nextShort();
 			if (opcaoAtividade == 1) {
 				limparTela();
 				ativa = true;
-				System.out.println("|============================================|");
+				System.out.println("|--------------------------------------------|");
 				System.out.println("|             CONTA NEW BANK ATIVA           |");
 				System.out.println("|--------------------------------------------|");
 				System.out.println("|Por gentileza, aguarde um momento.          |");
@@ -138,12 +138,12 @@ public class Aplicacao {
 			} else if (opcaoAtividade == 2) {
 				limparTela();
 				ativa = false;
-				System.out.println("|============================================|");
+				System.out.println("|--------------------------------------------|");
 				System.out.println("|            CONTA NEW BANK INATIVA          |");
 				System.out.println("|--------------------------------------------|");
 				System.out.println("|Para abrir uma nova conta, acesse nosso App |");
 				System.out.println("|Aguardamos seu retorno ansiosamente!        |");
-				System.out.println("|============================================|");
+				System.out.println("|--------------------------------------------|");
 				System.exit(0);
 			} else { 
 				invalidarOpcaoContas(opcaoContinuar);
@@ -162,7 +162,7 @@ public class Aplicacao {
 		return cpf;
 	}
 	public static int mostrarMenu() {			//MÉTODO PARA MENU DE ACESSO AS AÇÕES DA CONTA
-		System.out.println("|============================================|");
+		System.out.println("|--------------------------------------------|");
 		System.out.println("|               [ NEW BANK ]                 |");
 		System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
 		System.out.println("|--------------------------------------------|");
@@ -171,7 +171,7 @@ public class Aplicacao {
 		System.out.println("| [3] - DEBITAR VALOR                        |");
 		System.out.println("| [4] - OPERAÇÃO EXCLUSIVA                   |");
 		System.out.println("| [5] - SAIR                                 |");
-		System.out.println("|============================================|");
+		System.out.println("|--------------------------------------------|");
 		System.out.println("|                                            |");
 		System.out.print("|  DIGITE O CÓDIGO DA OPÇÃO SELECIONADA:     |");
 		opcaoOperacao = leia.nextInt();
@@ -185,13 +185,13 @@ public class Aplicacao {
 		System.out.println("|--------------------------------------------|");
 		System.out.println("|               [ NEW BANK ]                 |");
 		System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
-		System.out.println("|============================================|");
+		System.out.println("|--------------------------------------------|");
 		System.out.print("Digite o numero da sua conta: ");
 		return numero = leia.nextInt();
 	}
 	public static int mostrarContas() {     	//MÉTODO PARA MOSTRAR OS TIPOS DE CONTA DISPONIVEIS
 
-		System.out.println("|============================================|");
+		System.out.println("|--------------------------------------------|");
 		System.out.println("|               [ NEW BANK ]                 |");
 		System.out.println("|   ---> Aqui seu dinheiro têm VALOR! <---   |");
 		System.out.println("|--------------------------------------------|");
@@ -221,105 +221,165 @@ public class Aplicacao {
 			limparTela();  
 			
 			switch (tipoConta) {    //ESCOLHA DO TIPO DE CONTA
-			 case 3: 				//CASO ESCOLHA CONTA ESPECIAL
-				limparTela();
-				double limite = 1000.00;			
-				ContaEspecial contaEspecial = new ContaEspecial(numero, cpf, ativa, limite);
-				System.out.println("|============================================|");
-				System.out.println("|             { CONTA  ESPECIAL }            |");
-				acessarConta(numero);  	
-				inserirCPF(cpf);		
-				verificarAtividade(opcaoAtividade, ativa); 	
-				
-				do {
-					contador = contaEspecial.getContador();
-					System.out.println("|--------------------------------------------|");
-					System.out.println("    LIMITE DE MOVIMENTAÇÕES (HOJE): " + contaEspecial.getContador() + "/10");
-					mostrarMenu();
-					switch (opcaoOperacao) {
-						case 1: 
-							limparTela();
-							contaEspecial.consultarSaldo();
-						break;
-						
-						case 2: 
-							limparTela();
-							System.out.println("|============================================|");
-							System.out.println("| DIGITE O VALOR DA OPERAÇÃO: R$             |");
-							valor[contador] = leia.nextDouble();
-							contaEspecial.creditar(valor[contador]);					
-							contaEspecial.consultarSaldo();
-						break;
-							
-						case 3: 
-							limparTela();
-							System.out.println("|============================================|");
-							System.out.println("         DIGITE O VALOR DA OPERAÇÃO: R$       ");
-							valor[contador] = leia.nextDouble();
-							if (valor[contador] > contaEspecial.getSaldo()) {
-								contaEspecial.usarLimite(valor[contador]);
-								contaEspecial.consultarSaldo();
-							} else if (valor[contador] <= contaEspecial.getSaldo()) {
-								contaEspecial.debitar(valor[contador]);
-								contaEspecial.consultarSaldo();									
-							}
-							//contaEspecial.setContador(contaEspecial.getContador() + 1);
-						break;
-						
-						case 4: 
-							limparTela();
-							ContaEspecial.informarLimite(4);
-						break;
-						
-						case 5:  
-							pararAtividade(opcaoContinuar);
-						break;
-					}
-						
-				} while (contaEspecial.getContador() < valor.length);
-				
-				if (contaEspecial.getContador() == valor.length) {
-					encerrarPorLimite();
-				}
+			
+				case 1: 
+					
+					
+					
+					
+					
+					
+					
 				break;
 				
-			case 4:
-				limparTela();
-				double emprestimoEmpresa = 10000.00;
-				char pedirEmprestimo = 'N';
-				ContaEmpresa contaEmpresa = new ContaEmpresa(numero, cpf, ativa, pedirEmprestimo);
-				System.out.println("|============================================|");
-				System.out.println("|             { CONTA  EMPRESA }             |");
-				acessarConta(numero);  	
-				inserirCPF(cpf);		
-				verificarAtividade(opcaoAtividade, ativa); 	
+				case 2:
+					
+				break;
 				
-				do {
-					contador = contaEmpresa.getContador();
+				
+				case 3: 				//CASO ESCOLHA CONTA ESPECIAL
+					limparTela();
+					double limite = 1000.00;			
+					ContaEspecial contaEspecial = new ContaEspecial(numero, cpf, ativa, limite);
 					System.out.println("|--------------------------------------------|");
-					System.out.println("    LIMITE DE MOVIMENTAÇÕES (HOJE): " + contaEmpresa.getContador() + "/10");
-					mostrarMenu();
-					switch (opcaoOperacao) {
-						case 1: 
-							limparTela();
-							contaEmpresa.consultarSaldo();
-						break;
-						
-						case 2: 
-							limparTela();
-							System.out.println("|============================================|");
-							System.out.println("| DIGITE O VALOR DA OPERAÇÃO: R$             |");
-							valor[contador] = leia.nextDouble();
-							contaEmpresa.creditar(valor[contador]);					
-							contaEmpresa.consultarSaldo();
-						break;
+					System.out.println("|             { CONTA  ESPECIAL }            |");
+					acessarConta(numero);  	
+					inserirCPF(cpf);		
+					verificarAtividade(opcaoAtividade, ativa); 	
+					
+					do {
+						contador = contaEspecial.getContador();
+						System.out.println("|--------------------------------------------|");
+						System.out.println("    LIMITE DE MOVIMENTAÇÕES (HOJE): " + contaEspecial.getContador() + "/10");
+						mostrarMenu();
+						switch (opcaoOperacao) {
+							case 1: 
+								limparTela();
+								contaEspecial.consultarSaldo();
+							break;
 							
-						case 3: 
-							limparTela();
-							System.out.println("|============================================|");
-							System.out.println("         DIGITE O VALOR DA OPERAÇÃO: R$       ");
-							valor[contador] = leia.nextDouble();
-							if (valor[contador] > contaEmpresa.getSaldo()) {
+							case 2: 
+								limparTela();
+								System.out.println("|--------------------------------------------|");
+								System.out.println("| DIGITE O VALOR DA OPERAÇÃO: R$             |");
+								valor[contador] = leia.nextDouble();
+								contaEspecial.creditar(valor[contador]);					
+								contaEspecial.consultarSaldo();
+							break;
+								
+							case 3: 
+								limparTela();
+								System.out.println("|--------------------------------------------|");
+								System.out.println("         DIGITE O VALOR DA OPERAÇÃO: R$       ");
+								valor[contador] = leia.nextDouble();
+								if (valor[contador] > contaEspecial.getSaldo()) {
+									contaEspecial.usarLimite(valor[contador]);
+									contaEspecial.consultarSaldo();
+								} else if (valor[contador] <= contaEspecial.getSaldo()) {
+									contaEspecial.debitar(valor[contador]);
+									contaEspecial.consultarSaldo();									
+								}
+								//contaEspecial.setContador(contaEspecial.getContador() + 1);
+							break;
+							
+							case 4: 
+								limparTela();
+								ContaEspecial.informarLimite(4);
+							break;
+							
+							case 5:  
+								pararAtividade(opcaoContinuar);
+							break;
+						}
+							
+					} while (contaEspecial.getContador() < valor.length);
+					
+					if (contaEspecial.getContador() == valor.length) {
+						encerrarPorLimite();
+					}
+					break;
+					
+				case 4:					//CASO ESCOLHA CONTA EMPRESA
+					limparTela();
+					double emprestimoEmpresa = 10000.00;
+					char pedirEmprestimo = 'N';
+					ContaEmpresa contaEmpresa = new ContaEmpresa(numero, cpf, ativa, emprestimoEmpresa);
+					System.out.println("|--------------------------------------------|");
+					System.out.println("|             { CONTA  EMPRESA }             |");
+					acessarConta(numero);  	
+					inserirCPF(cpf);		
+					verificarAtividade(opcaoAtividade, ativa); 	
+					
+					do {
+						contador = contaEmpresa.getContador();
+						System.out.println("|--------------------------------------------|");
+						System.out.println("    LIMITE DE MOVIMENTAÇÕES (HOJE): " + contaEmpresa.getContador() + "/10");
+						mostrarMenu();
+						switch (opcaoOperacao) {
+							case 1: 
+								limparTela();
+								contaEmpresa.consultarSaldo();
+							break;
+							
+							case 2: 
+								limparTela();
+								System.out.println("|--------------------------------------------|");
+								System.out.println("| DIGITE O VALOR DA OPERAÇÃO: R$             |");
+								valor[contador] = leia.nextDouble();
+								contaEmpresa.creditar(valor[contador]);					
+								contaEmpresa.consultarSaldo();
+							break;
+								
+							case 3: 
+								limparTela();
+								System.out.println("|--------------------------------------------|");
+								System.out.println("|   OPERAÇÃO EXCLUSIVA PARA CONTA ESPECIAL   |");
+								System.out.println("|--------------------------------------------|");
+								System.out.println("         DIGITE O VALOR DA OPERAÇÃO: R$       ");
+								valor[contador] = leia.nextDouble();
+								if (valor[contador] > contaEmpresa.getSaldo()) {
+									System.out.println("|--------------------------------------------|");
+									System.out.println("| DESEJA SOLICITAR UM EMPRÉSTIMO? [S/N] ?    |");
+									System.out.println("|--------------------------------------------|");
+									opcaoContinuar = leia.next().toUpperCase().charAt(0);
+									if (opcaoContinuar == 'S') {
+										contaEmpresa.consultarSaldo();
+										System.out.println("|--------------------------------------------|");
+										System.out.println("| DIGITE O VALOR DO EMPRÉSTIMO: R$           |");
+										System.out.println("|--------------------------------------------|");
+										valor[contador] = leia.nextDouble();
+										contaEmpresa.pedirEmprestimo(valor[contador]);
+									} else if (opcaoContinuar == 'N') {
+										System.out.println("|--------------------------------------------|");
+										System.out.println("|          O QUE DESEJA FAZER AGORA?         |");
+										System.out.println("|--------------------------------------------|");
+										System.out.println("| [1] - VOLTAR AO MENU DE ATIVIDADES         |");
+										System.out.println("| [2] - SAIR                                 |");
+										System.out.println();
+										switch(opcaoAtividade) {
+											case 1: 
+												mostrarMenu();	
+											break;
+											
+											case 2:
+												pararAtividade(opcaoContinuar);
+											break;
+										}
+									} else {
+										invalidarOpcao(opcaoContinuar);	
+									}
+														
+								} else if (valor[contador] <= contaEmpresa.getSaldo()) {
+									contaEmpresa.debitar(valor[contador]);
+									contaEmpresa.consultarSaldo();									
+								}
+								//contaEspecial.setContador(contaEspecial.getContador() + 1);
+							break;
+							
+							case 4: 
+								limparTela();
+								System.out.println("|--------------------------------------------|");
+								System.out.println("|   OPERAÇÃO EXCLUSIVA PARA CONTA ESPECIAL   |");
 								System.out.println("|--------------------------------------------|");
 								System.out.println("| DESEJA SOLICITAR UM EMPRÉSTIMO? [S/N] ?    |");
 								System.out.println("|--------------------------------------------|");
@@ -350,29 +410,18 @@ public class Aplicacao {
 								} else {
 									invalidarOpcao(opcaoContinuar);	
 								}
-													
-							} else if (valor[contador] <= contaEmpresa.getSaldo()) {
-								contaEmpresa.debitar(valor[contador]);
-								contaEmpresa.consultarSaldo();									
-							}
-							//contaEspecial.setContador(contaEspecial.getContador() + 1);
-						break;
-						
-						case 4: 
-							limparTela();
-							ContaEspecial.informarLimite(4);
-						break;
-						
-						case 5:  
-							pararAtividade(opcaoContinuar);
+							break;
+							
+							case 5:  
+								pararAtividade(opcaoContinuar);
+						}
+							
+					} while (contaEmpresa.getContador() < valor.length);
+					
+					if (contaEmpresa.getContador() == valor.length) {
+						encerrarPorLimite();
 					}
-						
-				} while (contaEmpresa.getContador() < valor.length);
-				
-				if (contaEmpresa.getContador() == valor.length) {
-					encerrarPorLimite();
-				}
-			break;
+				break;
 			}
 		} while (tipoConta == 6);
 	}

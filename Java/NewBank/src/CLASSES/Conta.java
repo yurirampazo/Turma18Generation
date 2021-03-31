@@ -7,6 +7,7 @@ public class Conta {
 	private String cpf;
 	private double saldo;
 	private boolean ativa;
+	private int contador = 0;
 
 	// CONSTRUTORES
 	public Conta(int numero, String cpf) {
@@ -53,29 +54,60 @@ public class Conta {
 	public void setAtiva(boolean ativa) {
 		this.ativa = ativa;
 	}
+	
+	/* CONTADOR DE TRANSACAO */
+	public void setContador(int contador) {
+		this.contador = contador;	
+	}
+	
+	public int getContador() {
+		return this.contador;
+	}
 
 	// METODOS
 	public void creditar(double valor) {
+		if (valor > 0 ) {
 		Aplicacao.limparTela();
-		this.saldo = this.saldo + valor;
-		System.out.printf("Depósito realizado no valor de: R$ %.2f ", valor);
-		System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
+			this.saldo = this.saldo + valor;
+			System.out.println("|============================================|");
+			System.out.println("|             DEPÓSITO REALIZADO.            |"); 
+			System.out.println("|--------------------------------------------|");
+			System.out.printf("        [ VALOR CREDITADO: R$ %.2f ]      ", valor);
+			System.out.println("                                             ");
+			this.setContador(this.getContador() + 1);	 /*CONTADOR*/
+		}
+		else if (valor <= 0) {		
+			this.saldo += 0; 
+			System.out.println("|--------------------------------------------|");
+			System.out.println("|       VALOR INVÁLIDO PARA DEPÓSITO         |");
+			System.out.println("|--------------------------------------------|");
+		}		
 	}
 
 	public void debitar(double valor) {
 		Aplicacao.limparTela();
 		if (this.getSaldo() >= valor) {
 			this.saldo = this.saldo - valor;
-			System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
-			System.out.println();
-			System.out.printf("Saldo Disponível: R$ %.2f \n", this.saldo);
+			this.setContador(this.getContador() + 1);	 /*CONTADOR*/	
+		
 		} else if (valor > saldo) {	
-			System.out.println("Saldo insuficiente. Operação inválida");
-		}
+			System.out.println("|--------------------------------------------|");
+			System.out.println("|              OPERAÇÃO INVÁLIDA:            |");
+			System.out.println("|--------------------------------------------|");
+			System.out.println("|              SALDO INSUFICIENTE            |");
+			System.out.println("|--------------------------------------------|");
+		
+		} else if (valor <= 0) {		
+			this.saldo += 0; 
+			System.out.println("|--------------------------------------------|");
+			System.out.println("|       VALOR INVÁLIDO PARA DEPÓSITO         |");
+			System.out.println("|--------------------------------------------|");
+		}		
 	}
+	
 
 	public void consultarSaldo() {
-		Aplicacao.limparTela();
-		System.out.printf("        [ Saldo Disponível:  R$  %.2f ] \n",this.getSaldo());
+		System.out.println("|============================================|");
+		System.out.printf("       [ SALDO DISPONÍVEL:  R$  %.2f ] \n",this.getSaldo());
 	}		 
 }

@@ -15,22 +15,31 @@ public class ContaEmpresa extends Conta {
 	}
 	
 	public void setEmprestimoEmpresa(double emprestimoEmpresa) {
-		this.emprestimoEmpresa = emprestimoEmpresa;
+		this.emprestimoEmpresa = 10000.00;
 	}
 	
-	public void pedirEmprestimo(double valor) {
+	public double pedirEmprestimo (double valor) {
 		// double saldo = super.getSaldo();
-		if (valor <= super.getSaldo() + emprestimoEmpresa) {
-			System.out.println("Seu saldo acabou, a partir de agora você está utilizando o limite da conta empresa.");
-			double dif = 0.00;
-			dif = valor - super.getSaldo();
-
-			emprestimoEmpresa = emprestimoEmpresa - dif;
-			super.creditar(dif);
-
-			System.out.printf("Saque de R$ %.2f. Retire seu dinheiro abaixo! \n", valor);
-			System.out.printf("Saldo Disponível R$ %.2f \n", super.getSaldo());
-			System.out.printf("Limite para empréstimo: R$ %.2f \n", this.emprestimoEmpresa);
+		if (valor <= this.emprestimoEmpresa) {
+			this.emprestimoEmpresa -= valor;
+			super.creditar(valor);
+		} else if (valor > this.emprestimoEmpresa ) {
+			System.out.println("|--------------------------------------------|");
+			System.out.println("|              OPERAÇÃO INVÁLIDA:            |");
+			System.out.println("|--------------------------------------------|");
+			System.out.println("|        LIMITE EMPRESARIAL INSUFICIENTE     |");
+			System.out.println("|--------------------------------------------|");
+			
 		}
+		return emprestimoEmpresa;
 	}
+	@Override
+	public void consultarSaldo() {
+		System.out.println("|============================================|");
+		System.out.printf("       [ SALDO DISPONÍVEL:  R$  %.2f ]  ",super.getSaldo());
+		System.out.println(" ");
+		System.out.println("|--------------------------------------------|");
+		System.out.printf("   [ LIMITE EMPRESARIAL DISPONÍVEL: R$ %.2f ] ",this.emprestimoEmpresa);
+		System.out.println(" ");
+	}	
 }
